@@ -1,0 +1,91 @@
+<?php
+class ControllerCommonIp extends Controller {
+	
+	public function index() {
+		$this->load->model('Localisation/ip');
+		
+		if(isset($this->request->get['REMOTE_ADDR'])){
+			$data['ipaddress']=$this->request->get['REMOTE_ADDR'];
+		}
+		else {
+			$data['ipaddress']='';
+		}
+		
+
+		$data['ip_detail']=@unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+		
+		//$this->model_Localisation_ip->getIP($ip,$query);
+		
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/ip.tpl')) {
+			return $this->load->view($this->config->get('config_template') . '/template/common/ip.tpl', $data);
+		} else {
+			return $this->load->view('default/template/common/ip.tpl', $data);
+		}
+
+	}
+	/*
+	"status": "success",
+	"country": "COUNTRY",
+	"countryCode": "COUNTRY CODE",
+	"region": "REGION CODE",
+	"regionName": "REGION NAME",
+	"city": "CITY",
+	"zip": "ZIP CODE",
+	"lat": LATITUDE,
+	"lon": LONGITUDE,
+	"timezone": "TIME ZONE",
+	"isp": "ISP NAME",
+	"org": "ORGANIZATION NAME",
+	"as": "AS NUMBER / NAME",
+	"query": "IP ADDRESS USED FOR QUERY"
+	*/	
+	public function autocomplete(){
+		$this->load->model('Localisation/ip');
+		
+		$obj=json_decode($_POST['userinfo']);
+		
+		$this->model_Localisation_ip->getIP($obj->query,$_POST['userinfo']);
+	}
+	
+	public function get_client_ip_env() {
+		$ipaddress = '';
+		if (getenv('HTTP_CLIENT_IP'))
+			$ipaddress = getenv('HTTP_CLIENT_IP');
+		else if(getenv('HTTP_X_FORWARDED_FOR'))
+			$ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+		else if(getenv('HTTP_X_FORWARDED'))
+			$ipaddress = getenv('HTTP_X_FORWARDED');
+		else if(getenv('HTTP_FORWARDED_FOR'))
+			$ipaddress = getenv('HTTP_FORWARDED_FOR');
+		else if(getenv('HTTP_FORWARDED'))
+			$ipaddress = getenv('HTTP_FORWARDED');
+		else if(getenv('REMOTE_ADDR'))
+			$ipaddress = getenv('REMOTE_ADDR');
+		else
+			$ipaddress = 'UNKNOWN';
+	
+		return $ipaddress;
+	}
+	
+	// Function to get the client ip address
+	public function get_client_ip_server() {
+		$ipaddress = '';
+		if ($_SERVER['HTTP_CLIENT_IP'])
+			$ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+		else if($_SERVER['HTTP_X_FORWARDED_FOR'])
+			$ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		else if($_SERVER['HTTP_X_FORWARDED'])
+			$ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+		else if($_SERVER['HTTP_FORWARDED_FOR'])
+			$ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+		else if($_SERVER['HTTP_FORWARDED'])
+			$ipaddress = $_SERVER['HTTP_FORWARDED'];
+		else if($_SERVER['REMOTE_ADDR'])
+			$ipaddress = $_SERVER['REMOTE_ADDR'];
+		else
+			$ipaddress = 'UNKNOWN';
+	
+		return $ipaddress;
+	}
+	
+}

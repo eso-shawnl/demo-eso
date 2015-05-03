@@ -1,0 +1,77 @@
+<div class="pull-left" >
+	<div id="time" style="color:write;font-size:10px;position:absolute;top:5%;left:4%;">
+	</div>
+	<?php if (isset($ipaddress)) { ?>
+	<div style="color:write;font-size:10px;position:absolute;top:5%;left:13%;z-index:1;"> 
+		<h id=geo_info ><?php echo $ipaddress ?></h>
+	</div>
+	<?php } ?>
+</div>
+
+<script type="text/javascript"><!--
+var timerID = null;
+var timerRunning = false;
+function stopclock (){
+  if(timerRunning)
+  clearTimeout(timerID);
+  timerRunning = false;
+}
+function startclock () {
+  stopclock();
+  showtime();
+}
+function showtime () {
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+  var timeValue = now.getYear()+1900+"/"+(now.getMonth()+1)+"/"+now.getDate()+" " +((hours >= 12) ? " PM " : " AM " );
+    timeValue += ((hours >12) ? hours -12 :hours);
+    timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+    timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+    <!--$('#time').html(now); -->
+  $('#time').html(timeValue);
+  timerID = setTimeout("showtime()",1000);
+  timerRunning = true;
+}
+$().ready(function(){
+  startclock(); 
+});
+//--></script> 
+
+<script type="text/javascript"><!--
+
+$.getJSON("http://ip-api.com/json/?callback=?", function(data) {
+    var table_body = "";
+    
+    if(data.countryCode!='')
+   	 table_body +=data.countryCode;
+   	 
+    if(data.city!='')
+    	table_body +="--"+data.city;
+    	
+   	if(data.query!='')
+    	table_body +="--"+data.query;
+    
+	
+    /*	
+   
+    $.each(data, function(k, v) {
+                table_body += "<tr><td>" + k + "</td><td><b>" + v + "</b></td></tr>";
+            });
+    */
+    $("#geo_info").html(table_body);
+    
+    //
+    var json = 'userinfo='+JSON.stringify(data); 
+	$.ajax({   
+	    type:"POST",   
+	    url: 'index.php?route=common/ip/autocomplete',
+		data:json,   
+	    success:function(data){   
+	        console.log(data);   
+	    }  
+	});  
+});
+//--></script> 
+

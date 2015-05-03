@@ -1,0 +1,16 @@
+<?php
+class ModelLocalisationIP extends Model {
+	public function getIP($ip,$detail) {
+		$result=array();
+		$this->db->query("call addIPAddress('$ip','$detail',@result,@resson)");
+
+		$_result=get_object_vars($this->db->query("SELECT @result"));
+											
+		$_reason=get_object_vars($this->db->query("SELECT @reason"));
+
+		$result=array('result'=>$_result1['row']['@_result'],'reason'=>$_reason1['row']['@_reason']);
+		return $result;						
+	}
+
+
+}

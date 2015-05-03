@@ -1,0 +1,252 @@
+2015-05-02 13:28:11 - PHP Notice:  Use of undefined constant HTTP_CATALOG - assumed 'HTTP_CATALOG' in /volumes/data/eso-s1/event_admin_source_code/admin/controller/common/header.php on line 122
+2015-05-02 13:28:11 - PHP Notice:  Use of undefined constant HTTP_CATALOG - assumed 'HTTP_CATALOG' in /volumes/data/eso-s1/event_admin_source_code/admin/model/tool/image.php on line 40
+2015-05-02 13:30:12 - PHP Notice:  Use of undefined constant HTTP_CATALOG - assumed 'HTTP_CATALOG' in /volumes/data/eso-s1/event_admin_source_code/admin/controller/common/header.php on line 122
+2015-05-02 13:30:12 - PHP Notice:  Use of undefined constant HTTP_CATALOG - assumed 'HTTP_CATALOG' in /volumes/data/eso-s1/event_admin_source_code/admin/model/tool/image.php on line 40
+2015-05-02 13:31:40 - PHP Notice:  Undefined index: product_id in /volumes/data/eso-s1/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 13:31:40 - PHP Notice:  Undefined index: product_id in /volumes/data/eso-s1/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 13:32:01 - PHP Notice:  Undefined index: product_id in /volumes/data/eso-s1/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 13:32:01 - PHP Notice:  Undefined index: product_id in /volumes/data/eso-s1/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 13:32:25 - PHP Notice:  Undefined variable: placeholder in /volumes/data/eso-s1/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 13:32:25 - PHP Notice:  Undefined variable: help_name in /volumes/data/eso-s1/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 13:32:25 - PHP Notice:  Undefined variable: help_minimum in /volumes/data/eso-s1/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 13:32:25 - PHP Notice:  Undefined variable: help_maximum in /volumes/data/eso-s1/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 14:48:24 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 14:48:24 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 14:48:28 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 14:48:28 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 14:48:28 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 14:48:28 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 14:51:12 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 14:52:48 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 14:53:10 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 14:53:10 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 14:53:10 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 14:53:10 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 14:53:13 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 14:53:32 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''-36.845075,174.7508926','2015-03-23 03:03:48',
+                                ' at line 1<br />Error No: 1064<br />call edit_event_general(50,'catalog/IMG_0790.JPG','2015 Auckland special: Listen to Chinese · Evening',,'-36.845075,174.7508926','2015-03-23 03:03:48',
+                                                '2015-04-15 05:04:00','2015-05-15 12:05:00',1,1,1,1,
+                                                @result,@reason) in /var/www/html/event_admin_source_code/system/library/db/mysqli.php on line 40
+2015-05-02 14:53:32 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 14:53:32 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 14:53:32 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 14:53:32 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 14:53:32 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 14:53:41 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 14:53:56 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 14:54:39 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 14:54:39 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 14:54:42 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 14:54:42 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 14:54:42 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 14:54:42 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 14:54:47 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 14:54:51 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''-36.845075,174.7508926','2015-03-23 03:03:48',
+                                ' at line 1<br />Error No: 1064<br />call edit_event_general(50,'catalog/IMG_0790.JPG','2015 Auckland special: Listen to Chinese · Evening',,'-36.845075,174.7508926','2015-03-23 03:03:48',
+                                                '2015-04-15 05:04:00','2015-05-15 12:05:00',1,1,1,1,
+                                                @result,@reason) in /var/www/html/event_admin_source_code/system/library/db/mysqli.php on line 40
+2015-05-02 14:54:51 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 14:54:51 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 14:54:51 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 14:54:51 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 14:54:51 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 14:56:53 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''-36.845075,174.7508926','2015-03-23 03:03:48',
+                                ' at line 1<br />Error No: 1064<br />call edit_event_general(50,'catalog/IMG_0790.JPG','2015 Auckland special: Listen to Chinese · Evening',,'-36.845075,174.7508926','2015-03-23 03:03:48',
+                                                '2015-04-15 05:04:00','2015-05-15 12:05:00',1,1,1,1,
+                                                @result,@reason) in /var/www/html/event_admin_source_code/system/library/db/mysqli.php on line 40
+2015-05-02 14:56:53 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 14:56:53 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 14:56:53 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 14:56:53 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 14:56:53 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 14:57:00 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''-36.845075,174.7508926','2015-03-23 03:03:48',
+                                ' at line 1<br />Error No: 1064<br />call edit_event_general(50,'catalog/product/poster_0.jpg','2015 Auckland special: Listen to Chinese · Evening',,'-36.845075,174.7508926','2015-03-23 03:03:48',
+                                                '2015-04-15 05:04:00','2015-05-15 12:05:00',1,1,1,1,
+                                                @result,@reason) in /var/www/html/event_admin_source_code/system/library/db/mysqli.php on line 40
+2015-05-02 14:57:00 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 14:57:00 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 14:57:00 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 14:57:00 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 15:01:30 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 15:01:30 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 15:01:34 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:01:34 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:01:34 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:01:34 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:01:34 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 15:01:34 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 15:01:36 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 15:01:40 - PHP Warning:  imagejpeg(/var/www/html/event_admin_source_code/image/cache/catalog/IMG_0790-100x100.JPG): failed to open stream: Permission denied in /var/www/html/event_admin_source_code/system/library/image.php on line 45
+2015-05-02 15:01:40 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:01:40 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:01:40 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:01:40 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:01:40 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 15:01:40 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 15:03:08 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:03:08 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:03:08 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:03:08 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:03:08 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 15:03:08 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 15:03:11 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 15:03:11 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 15:03:14 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:03:14 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:03:14 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:03:14 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 15:03:14 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 15:03:14 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 15:21:53 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 15:21:53 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 15:21:56 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 15:21:56 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 15:21:56 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 15:21:56 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 15:22:02 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''-36.845075,174.7508926','2015-03-23 03:03:48',
+                                ' at line 1<br />Error No: 1064<br />call edit_event_general(50,'catalog/cart.png','2015 Auckland special: Listen to Chinese · Evening',,'-36.845075,174.7508926','2015-03-23 03:03:48',
+                                                '2015-04-15 05:04:00','2015-05-15 12:05:00',1,1,1,1,
+                                                @result,@reason) in /var/www/html/event_admin_source_code/system/library/db/mysqli.php on line 40
+2015-05-02 15:22:02 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 15:22:02 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 15:22:02 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 15:22:02 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 15:23:20 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''-36.845075,174.7508926','2015-03-23 03:03:48',
+                                ' at line 1<br />Error No: 1064<br />call edit_event_general(50,'catalog/product/poster_0.jpg','2015 Auckland special: Listen to Chinese · Evening',,'-36.845075,174.7508926','2015-03-23 03:03:48',
+                                                '2015-04-15 05:04:00','2015-05-15 12:05:00',1,1,1,1,
+                                                @result,@reason) in /var/www/html/event_admin_source_code/system/library/db/mysqli.php on line 40
+2015-05-02 15:23:20 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 15:23:20 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 15:23:20 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 15:23:20 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 15:40:00 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''-36.845075,174.7508926','2015-03-23 03:03:48',
+                                ' at line 1<br />Error No: 1064<br />call edit_event_general(50,'catalog/product/poster_0.jpg','2015 Auckland special: Listen to Chinese · Evening',,'-36.845075,174.7508926','2015-03-23 03:03:48',
+                                                '2015-04-15 05:04:00','2015-05-15 12:05:00',1,1,1,1,
+                                                @result,@reason) in /var/www/html/event_admin_source_code/system/library/db/mysqli.php on line 40
+2015-05-02 15:40:01 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 15:40:01 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 15:40:01 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 15:40:01 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 15:40:07 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 15:40:07 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 15:40:08 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 15:40:08 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 15:40:08 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 15:40:08 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 15:40:10 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''-36.845075,174.7508926','2015-03-23 03:03:48',
+                                ' at line 1<br />Error No: 1064<br />call edit_event_general(50,'catalog/product/poster_0.jpg','2015 Auckland special: Listen to Chinese · Evening',,'-36.845075,174.7508926','2015-03-23 03:03:48',
+                                                '2015-04-15 05:04:00','2015-05-15 12:05:00',1,1,1,1,
+                                                @result,@reason) in /var/www/html/event_admin_source_code/system/library/db/mysqli.php on line 40
+2015-05-02 15:40:11 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 15:40:11 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 15:40:11 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 15:40:11 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 15:40:21 - PHP Notice:  Error: PROCEDURE 3a_events_op.edit_event_general does not exist<br />Error No: 1305<br />call edit_event_general(50,'catalog/product/poster_0.jpg','2015 Auckland special: Listen to Chinese · Evening',9,'-36.845075,174.7508926','2015-03-23 03:03:48',
+                                                '2015-04-15 05:04:00','2015-05-15 12:05:00',1,1,1,1,
+                                                @result,@reason) in /var/www/html/event_admin_source_code/system/library/db/mysqli.php on line 40
+2015-05-02 15:40:21 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 15:40:21 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 15:40:21 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 15:40:21 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 23:31:16 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 23:31:16 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 23:31:41 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-02 23:31:41 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-02 23:31:41 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-02 23:31:41 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-02 23:31:46 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 23:31:46 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-02 23:31:47 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 23:31:47 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 23:31:47 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 23:31:47 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 23:31:47 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 23:31:47 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 23:32:53 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 23:32:53 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 23:32:53 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 23:32:53 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-02 23:32:53 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-02 23:32:53 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-03 11:55:28 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 11:55:28 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 11:55:37 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-03 11:55:37 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-03 11:55:37 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-03 11:55:37 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-03 11:55:39 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 11:55:39 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 11:55:41 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 11:56:34 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 12:01:27 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:01:27 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 12:01:31 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 12:47:00 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:47:00 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:47:05 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-03 12:47:05 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-03 12:47:05 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-03 12:47:05 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-03 12:47:10 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:47:10 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 81
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 88
+2015-05-03 12:47:13 - PHP Notice:  Undefined variable: help_tag in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_description.tpl on line 95
+2015-05-03 12:47:57 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:47:57 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:58:38 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:58:38 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:58:42 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 34
+2015-05-03 12:58:42 - PHP Notice:  Undefined variable: help_name in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 40
+2015-05-03 12:58:42 - PHP Notice:  Undefined variable: help_minimum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 106
+2015-05-03 12:58:42 - PHP Notice:  Undefined variable: help_maximum in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_general.tpl on line 113
+2015-05-03 12:58:49 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:58:49 - PHP Notice:  Undefined index: product_id in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_list.tpl on line 93
+2015-05-03 12:58:52 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-03 12:58:52 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-03 12:58:52 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-03 12:58:52 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 50
+2015-05-03 12:58:52 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83
+2015-05-03 12:58:52 - PHP Notice:  Undefined variable: placeholder in /var/www/html/event_admin_source_code/admin/view/template/catalog/event_image.tpl on line 83

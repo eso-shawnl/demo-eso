@@ -1,0 +1,100 @@
+html {
+  height: 100%;
+  width: 100%; }
+
+body {
+  width: 100%;
+  height: 200%; }
+
+.page-section {
+  width: 100%;
+  height: 50%; }
+
+.front-element {
+  position: relative;
+  z-index: 999; }
+
+h1 {
+  font-size: 3em; }
+
+.description {
+  font-size: 2em;
+  font-weight: bold; }
+
+.up-ground {
+  padding-bottom: 1em; }
+
+.button-heavy {
+  height: 2.2em;
+  width: 10em;
+  margin: 1.5em auto;
+  font-size: 2em;
+  line-height: 2em;
+  border: 0.1em solid #333;
+  cursor: pointer; }
+  .button-heavy:hover {
+    background-color: rgba(255, 255, 255, 0.5); }
+
+/* Start primary section */
+#primary-section .container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  position: relative; }
+#primary-section .panel-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.4); }
+  #primary-section .panel-overlay .center-text {
+    margin: 20% auto;
+    text-align: center; }
+#primary-section .event-show {
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+  #primary-section .event-show img {
+    display: block;
+    height: 100%; }
+
+/* End primary section */
+/* Start primary section */
+#secondary-section {
+  position: relative; }
+  #secondary-section #register-form {
+    position: relative;
+    z-index: 999; }
+  #secondary-section #information {
+    position: relative;
+    z-index: 999;
+    text-align: center;
+    padding-top: 10em;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-clip: content-box;
+    opacity: 0;
+    top: 5em; }
+  #secondary-section .button-heavy {
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    width: 6em;
+    position: absolute;
+    right: 1em;
+    bottom: 0.5em;
+    opacity: 0; }
+    #secondary-section .button-heavy:hover {
+      background-color: rgba(255, 255, 255, 0.7); }
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em; }
+
+  .description {
+    font-size: 1.5em; }
+
+  .button-heavy {
+    margin-top: 2em; } }
+
+/*# sourceMappingURL=main.css.map */

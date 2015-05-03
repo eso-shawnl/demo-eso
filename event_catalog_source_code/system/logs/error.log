@@ -1,0 +1,205 @@
+2015-05-02 6:50:14 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 159
+2015-05-02 6:50:14 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 160
+2015-05-02 6:50:14 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 159
+2015-05-02 6:50:14 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 160
+2015-05-02 6:50:14 - php Notice:  Undefined variable: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-02 6:50:14 - php Notice:  Undefined variable: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-02 7:04:05 - php Notice:  Undefined variable: text_your_otherinfo in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 165
+2015-05-02 7:04:05 - php Notice:  Undefined variable: entry_promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 167
+2015-05-02 7:04:05 - php Notice:  Undefined variable: promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 169
+2015-05-02 7:04:05 - php Notice:  Undefined variable: entry_promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 169
+2015-05-02 7:04:05 - php Notice:  Undefined variable: error_promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 170
+2015-05-02 7:04:05 - php Notice:  Undefined variable: ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 176
+2015-05-02 7:04:05 - php Notice:  Undefined variable: entry_ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 176
+2015-05-02 7:04:05 - php Notice:  Undefined variable: error_ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 177
+2015-05-02 7:17:52 - php Notice:  Undefined variable: promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 169
+2015-05-02 7:17:52 - php Notice:  Undefined variable: error_promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 170
+2015-05-02 7:17:52 - php Notice:  Undefined variable: ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 176
+2015-05-02 7:17:52 - php Notice:  Undefined variable: entry_ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 176
+2015-05-02 7:18:40 - php Notice:  Undefined variable: promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 169
+2015-05-02 7:18:40 - php Notice:  Undefined variable: error_promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 170
+2015-05-02 7:18:40 - php Notice:  Undefined variable: entry_ in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 174
+2015-05-02 7:18:40 - php Notice:  Undefined variable: ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 176
+2015-05-02 7:18:40 - php Notice:  Undefined variable: error_ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 177
+2015-05-02 7:19:21 - php Notice:  Undefined variable: promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 169
+2015-05-02 7:19:21 - php Notice:  Undefined variable: error_promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 170
+2015-05-02 7:19:21 - php Notice:  Undefined variable: ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 176
+2015-05-02 7:19:21 - php Notice:  Undefined variable: error_ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 177
+2015-05-02 7:22:15 - php Notice:  Undefined variable: error_promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 170
+2015-05-02 7:22:15 - php Notice:  Undefined variable: error_ticket_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/account/register.tpl on line 177
+2015-05-02 8:33:10 - php Notice:  Undefined index: password in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 502
+2015-05-02 8:33:10 - php Notice:  Undefined index: confirm_password in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 506
+2015-05-02 8:33:10 - php Notice:  Undefined index: password in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 506
+2015-05-02 8:34:34 - php Notice:  Undefined index: password in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 502
+2015-05-02 8:34:34 - php Notice:  Undefined index: confirm_password in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 506
+2015-05-02 8:34:34 - php Notice:  Undefined index: password in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 506
+2015-05-02 8:35:15 - php Notice:  Undefined index: password in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 502
+2015-05-02 8:35:15 - php Notice:  Undefined index: confirm_password in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 506
+2015-05-02 8:35:15 - php Notice:  Undefined index: password in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 506
+2015-05-02 10:18:25 - php Warning:  Missing argument 4 for ModelAccountCustomer::edit_customer_to_address(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 31 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 245
+2015-05-02 10:18:25 - php Notice:  Undefined variable: address_type_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 249
+2015-05-02 10:18:25 - php Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+                                                @result,@reason)' at line 1<br />Error No: 1064<br />call edit_customer_to_address('INSERT',51,34,,
+                                                @result,@reason) in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 10:18:25 - php Warning:  Missing argument 3 for ModelAccountCustomer::update_promotion(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 36 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 275
+2015-05-02 10:18:25 - php Notice:  Undefined variable: promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 278
+2015-05-02 10:18:25 - php Notice:  Error: Table '3a_events_op.tb_promotion_code' doesn't exist<br />Error No: 1146<br />UPDATE tb_promotion_code  SET customer_id = 111111 WHERE promotion_code = '' and event_id = 1 in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 10:18:25 - php Warning:  Missing argument 4 for ModelAccountCustomer::update_ticket_code(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 43 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 282
+2015-05-02 10:24:33 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 159
+2015-05-02 10:24:33 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 160
+2015-05-02 10:24:33 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 159
+2015-05-02 10:24:33 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 160
+2015-05-02 10:24:33 - php Notice:  Undefined variable: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-02 10:24:33 - php Notice:  Undefined variable: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-02 10:32:42 - php Warning:  Missing argument 4 for ModelAccountCustomer::edit_customer_to_address(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 31 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 245
+2015-05-02 10:32:42 - php Notice:  Undefined variable: address_type_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 249
+2015-05-02 10:32:42 - php Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+                                                @result,@reason)' at line 1<br />Error No: 1064<br />call edit_customer_to_address('INSERT',52,35,,
+                                                @result,@reason) in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 10:32:42 - php Warning:  Missing argument 3 for ModelAccountCustomer::update_promotion(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 36 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 275
+2015-05-02 10:32:42 - php Notice:  Undefined variable: promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 278
+2015-05-02 10:32:42 - php Warning:  Missing argument 4 for ModelAccountCustomer::update_ticket_code(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 43 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 282
+2015-05-02 10:36:14 - php Warning:  Missing argument 4 for ModelAccountCustomer::edit_customer_to_address(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 31 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 245
+2015-05-02 10:36:14 - php Notice:  Undefined variable: address_type_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 249
+2015-05-02 10:36:14 - php Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+                                                @result,@reason)' at line 1<br />Error No: 1064<br />call edit_customer_to_address('INSERT',53,36,,
+                                                @result,@reason) in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 10:36:14 - php Warning:  Missing argument 3 for ModelAccountCustomer::update_promotion(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 36 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 275
+2015-05-02 10:36:14 - php Notice:  Undefined variable: promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 278
+2015-05-02 10:36:14 - php Warning:  Missing argument 4 for ModelAccountCustomer::update_ticket_code(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 43 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 282
+2015-05-02 10:40:48 - php Warning:  Missing argument 4 for ModelAccountCustomer::edit_customer_to_address(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 31 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 245
+2015-05-02 10:40:48 - php Notice:  Undefined variable: address_type_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 249
+2015-05-02 10:40:48 - php Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+                                                @result,@reason)' at line 1<br />Error No: 1064<br />call edit_customer_to_address('INSERT',54,37,,
+                                                @result,@reason) in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 10:40:48 - php Warning:  Missing argument 3 for ModelAccountCustomer::update_promotion(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 36 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 275
+2015-05-02 10:40:48 - php Notice:  Undefined variable: promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 278
+2015-05-02 10:40:48 - php Warning:  Missing argument 4 for ModelAccountCustomer::update_ticket_code(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 43 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 282
+2015-05-02 10:41:52 - php Warning:  Missing argument 4 for ModelAccountCustomer::edit_customer_to_address(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 31 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 245
+2015-05-02 10:41:52 - php Notice:  Undefined variable: address_type_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 249
+2015-05-02 10:41:52 - php Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+                                                @result,@reason)' at line 1<br />Error No: 1064<br />call edit_customer_to_address('INSERT',55,38,,
+                                                @result,@reason) in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 10:41:52 - php Warning:  Missing argument 3 for ModelAccountCustomer::update_promotion(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 36 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 275
+2015-05-02 10:41:52 - php Notice:  Undefined variable: promotion_code in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 278
+2015-05-02 10:41:52 - php Warning:  Missing argument 4 for ModelAccountCustomer::update_ticket_code(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 43 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 282
+2015-05-02 10:58:42 - php Warning:  Missing argument 4 for ModelAccountCustomer::edit_customer_to_address(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 31 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 245
+2015-05-02 10:58:42 - php Notice:  Undefined variable: address_type_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 249
+2015-05-02 10:58:42 - php Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+                                                @result,@reason)' at line 1<br />Error No: 1064<br />call edit_customer_to_address('INSERT',56,37,,
+                                                @result,@reason) in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 11:00:20 - php Warning:  Missing argument 4 for ModelAccountCustomer::edit_customer_to_address(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 31 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 245
+2015-05-02 11:00:20 - php Notice:  Undefined variable: address_type_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 249
+2015-05-02 11:00:20 - php Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+                                                @result,@reason)' at line 1<br />Error No: 1064<br />call edit_customer_to_address('INSERT',57,39,,
+                                                @result,@reason) in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 12:11:55 - php Notice:  Error: Unknown column '31c18f4d82c77f6cb13afe9365beadf9' in 'field list'<br />Error No: 1054<br />call edit_customer(0,1,0,'ewrwer','wrwerw','test1were111@mail.com',
+                                                '','','1','2874ef43b', '35a8ce3d8a331cbb2ec4234064205d2cfcdf7d97', 1,
+                                                '127.0.0.1', 1 ,1,31c18f4d82c77f6cb13afe9365beadf9,
+                                                @result,@reason) in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 12:29:23 - php Notice:  Undefined index: fistname in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 48
+2015-05-02 12:29:23 - php Warning:  Missing argument 2 for Config::set(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 53 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/config.php on line 9
+2015-05-02 12:29:23 - php Notice:  Undefined variable: value in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/config.php on line 10
+2015-05-02 12:34:52 - php Notice:  Undefined index: fistname in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 48
+2015-05-02 12:34:52 - php Warning:  Missing argument 2 for Config::set(), called in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 53 and defined in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/config.php on line 9
+2015-05-02 12:34:52 - php Notice:  Undefined variable: value in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/config.php on line 10
+2015-05-02 13:22:45 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 159
+2015-05-02 13:22:45 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 160
+2015-05-02 13:22:45 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 159
+2015-05-02 13:22:45 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 160
+2015-05-02 13:22:45 - php Notice:  Undefined variable: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-02 13:22:45 - php Notice:  Undefined variable: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-02 14:33:32 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 159
+2015-05-02 14:33:32 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 160
+2015-05-02 14:33:32 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 159
+2015-05-02 14:33:32 - php Notice:  Undefined index: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 160
+2015-05-02 14:33:32 - php Notice:  Undefined variable: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-02 14:33:32 - php Notice:  Undefined variable: product_id in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-02 15:03:02 - php Warning:  require_once(./mail/mailsvc.php): failed to open stream: No such file or directory in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 47
+2015-05-02 15:05:40 - php Warning:  require_once(./mail/mailsvc.php): failed to open stream: No such file or directory in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/controller/account/register.php on line 47
+2015-05-02 15:17:22 - php Warning:  require_once(./class.phpmailer.php): failed to open stream: No such file or directory in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/mailsvc.php on line 9
+2015-05-02 15:19:36 - php Notice:  Error: Table '3a_events_op.3a_customer' doesn't exist<br />Error No: 1146<br />SELECT COUNT(*) AS total FROM 3a_customer WHERE LOWER(email) = 'stevenwang0410@gmail.com' in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 15:19:36 - php Notice:  Trying to get property of non-object in /Volumes/DATA/eso-s1/event_catalog_source_code/catalog/model/account/customer.php on line 157
+2015-05-02 15:19:36 - php Notice:  Error: Table '3a_events_op.3a_customer' doesn't exist<br />Error No: 1146<br />SELECT * FROM 3a_customer WHERE LOWER(email) = 'stevenwang0410@gmail.com'
+			AND (password = SHA1(CONCAT(salt, SHA1(CONCAT(salt, SHA1('111111'))))) OR password = '96e79218965eb72c92a549dd5a330112')
+			AND status = '1' AND approved = '1' in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 15:19:36 - php Notice:  Trying to get property of non-object in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/customer.php on line 55
+2015-05-02 13:22:46 - php Warning:  file_get_contents(regconfirm_en.html): failed to open stream: No such file or directory in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/mailsvc.php on line 145
+2015-05-02 13:27:40 - php Warning:  file_get_contents(./regconfirm_en.html): failed to open stream: No such file or directory in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/mailsvc.php on line 145
+2015-05-02 15:35:42 - php Notice:  Undefined variable: input in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/captcha.php on line 13
+2015-05-02 15:35:46 - php Notice:  Undefined variable: input in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/captcha.php on line 13
+2015-05-02 14:08:15 - php Notice:  Undefined variable: languageId in /Volumes/DATA/eso-s1/event_catalog_source_code/system/library/mailsvc.php on line 145
+2015-05-02 14:32:42 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-02 14:32:53 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-02 14:32:53 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-02 14:32:59 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-02 14:32:59 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-02 14:39:18 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-02 14:39:18 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-02 14:39:20 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-02 14:39:20 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-02 14:39:24 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-02 15:03:31 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-02 15:07:00 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-02 15:11:18 - php Notice:  Error: Incorrect number of arguments for PROCEDURE 3a_events_op.edit_customer; expected 17, got 18<br />Error No: 1318<br />call edit_customer(0,1,0,'sdfsaf','safdsad','sdfsafsad@sss.com',
+                                                '','','1','85513b3cd', '5187763ba2a83dc48e0c5c1190a7a48e0b2d18be', 1,
+                                                '116.12.61.231', 1 ,1,'0359f85455edb1a4bbbd847e6a5e5c43',
+                                                @result,@reason) in /var/www/html/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 15:13:45 - php Notice:  Error: The user specified as a definer ('3a_events_op'@'localhost') does not exist<br />Error No: 1449<br />call edit_customer(0,1,0,'sdfsaf','safdsad','sdfsafsad@sss.com',
+                                                '','','1','c607b0539', 'b9b961d9586ecb34f780a4455dcfb43982ab5001', 1,
+                                                '116.12.61.231', 1 ,1,'5de74102d28bf07d3acdd6dc8a4f464c',
+                                                @result,@reason) in /var/www/html/event_catalog_source_code/system/library/db/mysqli.php on line 41
+2015-05-02 15:57:54 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-02 16:02:47 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-02 23:34:19 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-02 23:37:32 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-02 23:38:04 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 11:42:35 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 11:51:48 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 11:52:47 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-03 11:52:47 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-03 11:52:57 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 11:54:03 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-03 11:54:03 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-03 11:56:01 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 11:56:40 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-03 11:56:40 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-03 12:13:22 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 12:26:46 - php Warning:  session_start(): open(/var/lib/php/5.6/session/sess_6o91u3draaak4fhg2uahk5boj5, O_RDWR) failed: Permission denied (13) in /var/www/html/event_catalog_source_code/system/library/session.php on line 12
+2015-05-03 12:26:46 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 12:26:47 - php Warning:  session_start(): open(/var/lib/php/5.6/session/sess_ape81oqvjqlt6gpo9pk9u3s8u6, O_RDWR) failed: Permission denied (13) in /var/www/html/event_catalog_source_code/system/library/session.php on line 12
+2015-05-03 12:26:47 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 12:26:48 - php Warning:  session_start(): open(/var/lib/php/5.6/session/sess_6o91u3draaak4fhg2uahk5boj5, O_RDWR) failed: Permission denied (13) in /var/www/html/event_catalog_source_code/system/library/session.php on line 12
+2015-05-03 12:26:48 - php Warning:  session_start(): open(/var/lib/php/5.6/session/sess_ape81oqvjqlt6gpo9pk9u3s8u6, O_RDWR) failed: Permission denied (13) in /var/www/html/event_catalog_source_code/system/library/session.php on line 12
+2015-05-03 12:27:16 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-03 12:27:16 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-03 12:27:17 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 12:27:18 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 12:27:21 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 12:27:24 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 330
+2015-05-03 12:27:24 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 334
+2015-05-03 12:27:25 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:15:23 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:16:17 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:18:42 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 332
+2015-05-03 13:18:42 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 336
+2015-05-03 13:18:42 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:18:53 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 332
+2015-05-03 13:18:53 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 336
+2015-05-03 13:18:54 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:19:45 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 332
+2015-05-03 13:19:45 - php Notice:  Undefined variable: product_id in /var/www/html/event_catalog_source_code/catalog/view/theme/default/template/event/event.tpl on line 336
+2015-05-03 13:19:46 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:32:24 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:32:53 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:33:40 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:33:42 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:35:22 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:35:23 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:36:24 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:36:30 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:36:36 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:37:32 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:41:52 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:43:21 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57
+2015-05-03 13:47:02 - php Notice:  Undefined index: rating in /var/www/html/event_catalog_source_code/catalog/controller/module/featured.php on line 57

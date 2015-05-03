@@ -1,0 +1,132 @@
+<?php
+class ControllerModuleMap extends Controller {
+	private $error = array(); 
+	
+	public function index() {   
+		$this->load->language('module/map');
+
+		$this->document->setTitle($this->language->get('heading_title'));
+		
+		$this->load->model('design/layout');
+		
+		$data['layouts'] = $this->model_design_layout->getLayouts();
+		
+		$this->load->model('setting/setting');
+				
+		if (($this->request->server['REQUEST_METHOD'] == 'POST') && ($this->validate())) {
+			$this->model_setting_setting->editSetting('map', $this->request->post);		
+					
+			$this->session->data['success'] = $this->language->get('text_success');
+						
+			$this->redirect(HTTPS_SERVER . 'index.php?route=extension/module&token=' . $this->session->data['token']);
+		}
+				
+		$data['heading_title'] = $this->language->get('heading_title');
+
+		$data['text_enabled'] = $this->language->get('text_enabled');
+		$data['text_disabled'] = $this->language->get('text_disabled');
+		$data['text_left'] = $this->language->get('text_left');
+		$data['text_right'] = $this->language->get('text_right');
+		
+		$data['entry_position'] = $this->language->get('entry_position');
+		$data['entry_status'] = $this->language->get('entry_status');
+		$data['entry_layout'] = $this->language->get('entry_layout');
+		$data['entry_sort_order'] = $this->language->get('entry_sort_order');
+		$data['entry_usecache'] = $this->language->get('entry_usecache');
+		$data['button_save'] = $this->language->get('button_save');
+		$data['button_cancel'] = $this->language->get('button_cancel');
+		$data['button_add_module'] = $this->language->get('button_add_module');
+		$data['button_remove'] = $this->language->get('button_remove');
+		$data['text_content_top'] = $this->language->get('text_content_top');
+		$data['text_content_bottom'] = $this->language->get('text_content_bottom');		
+		$data['text_column_left'] = $this->language->get('text_column_left');
+		$data['text_column_right'] = $this->language->get('text_column_right');
+
+
+ 		if (isset($this->error['warning'])) {
+			$data['error_warning'] = $this->error['warning'];
+		} else {
+			$data['error_warning'] = '';
+		}
+		
+		
+		
+		$data['modules'] = array();
+		
+		if (isset($this->request->post['map_module'])) {
+			$data['modules'] = $this->request->post['map_module'];
+		} elseif ($this->config->get('map_module')) { 
+			$data['modules'] = $this->config->get('map_module');
+		}	
+		
+  		$data['breadcrumbs'] = array();
+
+   		$data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('text_home'),
+			'href'      => $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL'),
+      		'separator' => false
+   		);
+
+   		$data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('text_module'),
+			'href'      => $this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL'),
+      		'separator' => ' :: '
+   		);
+		
+   		$data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get('heading_title'),
+			'href'      => $this->url->link('module/map', 'token=' . $this->session->data['token'], 'SSL'),
+      		'separator' => ' :: '
+   		);
+		
+		$data['action'] = HTTPS_SERVER . 'index.php?route=module/map&token=' . $this->session->data['token'];
+		
+		$data['cancel'] = HTTPS_SERVER . 'index.php?route=extension/module&token=' . $this->session->data['token'];
+
+		if (isset($this->request->post['map_position'])) {
+			$data['map_position'] = $this->request->post['map_position'];
+		} else {
+			$data['map_position'] = $this->config->get('map_position');
+		}
+		
+		if (isset($this->request->post['map_status'])) {
+			$data['map_status'] = $this->request->post['map_status'];
+		} else {
+			$data['map_status'] = $this->config->get('map_status');
+		}
+		
+		if (isset($this->request->post['map_sort_order'])) {
+			$data['map_sort_order'] = $this->request->post['map_sort_order'];
+		} else {
+			$data['map_sort_order'] = $this->config->get('map_sort_order');
+		}
+		
+		if (isset($this->request->post['map_usecache'])) {
+			$data['map_usecache'] = $this->request->post['map_usecache'];
+		} else {
+			$data['map_usecache'] = $this->config->get('map_usecache');
+		}
+
+		$data['footer'] = $this->load->controller('common/footer');
+		$data['header'] = $this->load->controller('common/header');
+		
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/module/map.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/module/map.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('/module/map.tpl', $data));
+		}
+	}
+	
+	private function validate() {
+		if (!$this->user->hasPermission('modify', 'module/map')) {
+			$this->error['warning'] = $this->language->get('error_permission');
+		}
+		
+		if (!$this->error) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}	
+	}
+}
+?>
