@@ -110,7 +110,8 @@ class ModelModelsInterface extends Model {
 
         $class_array = array('ticket'=>'Ticket',
                             'order'=>'Order',
-                            'event'=>'Event');
+                            'event'=>'Event',
+                            'configuration'=>'Configuration');
 
         if(file_exists(DIR_APPLICATION.'model/models/'.$class_name.'.php')){
 

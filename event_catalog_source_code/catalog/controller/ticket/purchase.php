@@ -121,6 +121,8 @@ class ControllerTicketPurchase extends Controller {
         $data['text_personal_info'] = $this->language->get('text_personal_info');
         $data['button_nextstep'] = $this->language->get('button_nextstep');
 
+
+
         if (isset($this->request->post['customer_group_id'])) {
             $data['customer_group_id'] = $this->request->post['customer_group_id'];
         } else {
@@ -307,7 +309,6 @@ class ControllerTicketPurchase extends Controller {
             $data['error_zone'] = '';
         }
 
-
         if (isset($this->error['custom_field'])) {
             $data['error_custom_field'] = $this->error['custom_field'];
         } else {
@@ -347,11 +348,14 @@ class ControllerTicketPurchase extends Controller {
         }
 
         $ticket_list=array();
-
         $event=array('event_id'=>'50');
-        $zone=array();
 
+        //get ticket information from database
         $ticket_db=$this->model_models_interface->model_interface(0,'ticket','for_cart','get',$event);
+
+        //get age group from database
+        $age_group=$this->model_models_interface->model_interface(0,'configuration','by_code','get','age_group');
+
         foreach ($ticket_db as $key => $value) {
             if (is_array($value) && !empty($value)) {
                 if ($key == 'ticket_price_list') {
@@ -368,6 +372,7 @@ class ControllerTicketPurchase extends Controller {
             }
         }
         $data['tickets']=$ticket_list;
+        $data['age_group']=$age_group;
 
 			$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 
@@ -389,25 +394,27 @@ class ControllerTicketPurchase extends Controller {
 			}
 	}
 
-    //if a user is logged, redirect to checkout page
-    //otherwise, redirect to register page
     public function checkout(){
         //To do - get purchase data from view
         $purchase_array=array();
         $data=$this->request->post;
-        foreach($data as $k => $v) {
-            if (isset($v) && !empty($v)) {
-                if ($k != 'total' && $k != 'customer') {
-                    if ($v['subtotal'] != '0.00') {
-                        $purchase_array[$k] = $v;
+        var_dump($data['customer']);
+
+        //validate user information from form
+        if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate($data['customer'])){
+            foreach($data as $k => $v) {
+                if (isset($v) && !empty($v)) {
+                    if ($k != 'total' && $k != 'customer') {
+                        if ($v['subtotal'] != '0.00') {
+                            $purchase_array[$k] = $v;
+                        }
                     }
                 }
-            }
-        };
-        $total=$data['total'];
-        $this->submit($data['customer'],$purchase_array,$total);
+            };
+            $total=$data['total'];
+            $this->submit($data['customer'],$purchase_array,$total);
+        }
     }
-
     public function submit($customer_info,$purchase_array,$total)
     {
         $this->load->model('models/interface');
@@ -443,8 +450,8 @@ class ControllerTicketPurchase extends Controller {
             //$data['payment_zone_id']
             //$data['payment_address_format']
             //$data['payment_custom_field']
-            $data['payment_method'] = 1;//1 represents online banking
-            //$data['payment_code'];
+            $data['payment_method'] = 1;//1 represents online banking, 2 represents EFPOS/cash
+            $data['delivery_type']=1;//1 represents post, 2 represents pickup
 
             if($customer_info['delivery']=='delivery_mail'){
                 $data['shipping_firstname'] = $customer_info['firstname'];
@@ -536,4 +543,68 @@ class ControllerTicketPurchase extends Controller {
                 }
             }
         }
+    public function validate($data) {
+        if(isset($data['firstname'])) {
+            if ((utf8_strlen(trim($data['firstname'])) < 1) || (utf8_strlen($data['firstname'])) > 32) {
+                $this->error['firstname'] = $this->language->get('error_firstname');
+            }
+        }
+
+        if(isset($data['lastname'])) {
+            if ((utf8_strlen(trim($data['lastname'])) < 1) || (utf8_strlen(trim($data['lastname'])) > 32)) {
+                $this->error['lastname'] = $this->language->get('error_lastname');
+            }
+        }
+
+        if ((utf8_strlen($data['email']) > 96) || !preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $data['email'])) {
+            $this->error['email'] = $this->language->get('error_email');
+        }
+
+        if(isset($data['telephone'])) {
+            if ((utf8_strlen($data['telephone']) < 3) || (utf8_strlen($data['telephone']) > 32)) {
+                $this->error['telephone'] = $this->language->get('error_telephone');
+            }
+        }
+
+        if(isset($data['route'])) {
+            if ((utf8_strlen(trim($data['route'])) < 3) || (utf8_strlen(trim($data['route'])) > 128)) {
+                $this->error['route'] = $this->language->get('error_route');
+            }
+        }
+
+        if(isset($data['city'])) {
+            if ((utf8_strlen(trim($data['city'])) < 2) || (utf8_strlen(trim($data['city'])) > 128)) {
+                $this->error['city'] = $this->language->get('error_city');
+            }
+        }
+
+        if(isset($data['country'])) {
+            if ($data['country'] == '') {
+                $this->error['country'] = $this->language->get('error_country');
+            }
+        }
+
+        if(isset($data['postcode'])) {
+            if ($data['postcode'] == '') {
+                $this->error['postcode'] = $this->language->get('error_postcode');
+            }
+        }
+
+        if(isset($data['zone'])) {
+            if (!isset($data['zone']) || $data['zone'] == '') {
+                $this->error['zone'] = $this->language->get('error_zone');
+            }
+        }
+//        // Agree to terms
+//        if ($this->config->get('config_account_id')) {
+//            $this->load->model('catalog/information');
+//
+//            $information_info = $this->model_catalog_information->getInformation($this->config->get('config_account_id'));
+//
+//            if ($information_info && !isset($this->request->post['agree'])) {
+//                $this->error['warning'] = sprintf($this->language->get('error_agree'), $information_info['title']);
+//            }
+//        }
+        return !$this->error;
+    }
 }
