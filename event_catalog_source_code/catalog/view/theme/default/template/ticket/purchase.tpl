@@ -176,7 +176,7 @@
               <div id="shipping-detail-pickup">
                   Please go to 40 Eden Crescent to pickup the ticket, thank you.
               </div>
-              <div id="shipping-detail-mail" class="col-md-6 col-sm-8">
+              <div id="shipping-detail-mail" class="col-sm-12">
                   <!-- Start Address Fields -->
                   <fieldset>
                       <legend><?php echo $text_your_address; ?></legend>
