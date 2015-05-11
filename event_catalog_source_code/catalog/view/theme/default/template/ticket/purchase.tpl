@@ -63,7 +63,7 @@
             <br>
             <br>
             <div class="buttons">
-                <input class="pull-right btn btn-primary" type="button" value="<?php echo $button-nextstep; ?>" id="ticket-nextstep">
+                <input class="pull-right btn btn-primary" type="button" value="<?php echo $button_nextstep; ?>" id="ticket-nextstep">
             </div>
         </div>
     <!-- End tickets table -->
