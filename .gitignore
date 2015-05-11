@@ -1,2 +1,18 @@
-# Include your project-specific ignores in this file
-# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+.idea
+*.swp
+*.swo
+
+event_catalog_source_code/config.php
+event_catalog_source_code/log/*
+!/event_catalog_source_code/log/index.html
+event_catalog_source_code/image/*
+!/event_catalog_source_code/image/index.html
+event_catalog_source_code/system/cache/*
+event_catalog_source_code/system/logs/*
+event_catalog_source_code/vqmod/checked.cache
+
+event_admin_source_code/admin/config.php
+event_admin_source_code/admin/log/*
+!/event_admin_source_code/admin/log/index.html
+event_admin_source_code/system/cache/*
+event_admin_source_code/system/logs/*

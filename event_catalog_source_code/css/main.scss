@@ -1,15 +1,15 @@
-html {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    width: 100%;
-    height: 200%;
-    font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
-}
-
 #landing {
+    html {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        width: 100%;
+        height: 200%;
+        font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+    }
+
     .page-section {
         width: 100%;
         height: 50%;
@@ -185,3 +185,58 @@ img.slide-img {
 .event-show-placeholder {
     padding: 0;
 }
+
+
+// Start order forms
+#ticket-form, #order-summary {
+    .table {
+        td, th {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        input {
+            text-align: center;
+        }
+
+        tr {
+            height: 4em;
+        }
+
+    }
+
+    .error {
+        color: red;
+    }
+
+    input.error {
+        border: 1px solid red;
+    }
+
+    .table-total {
+
+        font-size: 2em;
+        height: 3em;
+
+        td, th {
+            padding: 0.5em;
+        }
+    }
+}
+
+// End order forms
+
+// Start checkout page
+.ticket-checkout {
+
+    #shipping-methods .radio label{
+        font-size: 1.5em;
+    }
+
+    #shipping-detail-mail {
+        display: none;
+    }
+}
+
+
+// End checkout page
