@@ -120,26 +120,27 @@ img.slide-img {
 .event-show-placeholder {
   padding: 0; }
 
-#ticket-form .table td, #ticket-form .table th, #order-summary .table td, #order-summary .table th {
+.ticket-purchase #shipping-methods .radio label {
+  font-size: 1.5em; }
+.ticket-purchase #shipping-detail-mail {
+  display: none; }
+.ticket-purchase #order-info {
+  display: none; }
+.ticket-purchase #ticket-form .table td, .ticket-purchase #ticket-form .table th, .ticket-purchase #order-summary .table td, .ticket-purchase #order-summary .table th {
   vertical-align: middle;
   text-align: center; }
-#ticket-form .table input, #order-summary .table input {
+.ticket-purchase #ticket-form .table input, .ticket-purchase #order-summary .table input {
   text-align: center; }
-#ticket-form .table tr, #order-summary .table tr {
+.ticket-purchase #ticket-form .table tr, .ticket-purchase #order-summary .table tr {
   height: 4em; }
-#ticket-form .error, #order-summary .error {
+.ticket-purchase #ticket-form .error, .ticket-purchase #order-summary .error {
   color: red; }
-#ticket-form input.error, #order-summary input.error {
+.ticket-purchase #ticket-form input.error, .ticket-purchase #order-summary input.error {
   border: 1px solid red; }
-#ticket-form .table-total, #order-summary .table-total {
+.ticket-purchase #ticket-form .table-total, .ticket-purchase #order-summary .table-total {
   font-size: 2em;
   height: 3em; }
-  #ticket-form .table-total td, #ticket-form .table-total th, #order-summary .table-total td, #order-summary .table-total th {
+  .ticket-purchase #ticket-form .table-total td, .ticket-purchase #ticket-form .table-total th, .ticket-purchase #order-summary .table-total td, .ticket-purchase #order-summary .table-total th {
     padding: 0.5em; }
-
-.ticket-checkout #shipping-methods .radio label {
-  font-size: 1.5em; }
-.ticket-checkout #shipping-detail-mail {
-  display: none; }
 
 /*# sourceMappingURL=main.css.map */

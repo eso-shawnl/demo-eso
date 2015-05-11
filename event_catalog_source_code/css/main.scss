@@ -187,47 +187,10 @@ img.slide-img {
 }
 
 
-// Start order forms
-#ticket-form, #order-summary {
-    .table {
-        td, th {
-            vertical-align: middle;
-            text-align: center;
-        }
 
-        input {
-            text-align: center;
-        }
 
-        tr {
-            height: 4em;
-        }
-
-    }
-
-    .error {
-        color: red;
-    }
-
-    input.error {
-        border: 1px solid red;
-    }
-
-    .table-total {
-
-        font-size: 2em;
-        height: 3em;
-
-        td, th {
-            padding: 0.5em;
-        }
-    }
-}
-
-// End order forms
-
-// Start checkout page
-.ticket-checkout {
+// Start purchase page
+.ticket-purchase {
 
     #shipping-methods .radio label{
         font-size: 1.5em;
@@ -236,7 +199,47 @@ img.slide-img {
     #shipping-detail-mail {
         display: none;
     }
+
+    #order-info {
+        display: none;
+    }
+
+    #ticket-form, #order-summary {
+        .table {
+            td, th {
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            input {
+                text-align: center;
+            }
+
+            tr {
+                height: 4em;
+            }
+
+        }
+
+        .error {
+            color: red;
+        }
+
+        input.error {
+            border: 1px solid red;
+        }
+
+        .table-total {
+
+            font-size: 2em;
+            height: 3em;
+
+            td, th {
+                padding: 0.5em;
+            }
+        }
+    }
 }
 
 
-// End checkout page
+// End purchase page

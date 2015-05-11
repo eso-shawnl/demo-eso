@@ -28,3 +28,12 @@ define('DB_USERNAME', 'eso');
 define('DB_PASSWORD', '0Y6eDUPho56Um');
 define('DB_DATABASE', 'eso_events_new');
 define('DB_PREFIX', '3a_');
+
+/*
+define('DB_DRIVER', 'mysqli');
+define('DB_HOSTNAME', 'localhost');
+define('DB_USERNAME', '3a_events_op');
+define('DB_PASSWORD', 'test123');
+define('DB_DATABASE', '3a_events_op');
+define('DB_PREFIX', '3a_');
+*/

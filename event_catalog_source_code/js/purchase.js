@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -95,6 +95,10 @@
         $total.addClass('error');
         return false;
     }
+
+    $('#ticket-nextstep').click(function(){
+        $('#order-info').toggle(500);
+    });
 
     $(window).load(function(){
         $quantityInputs.each(function(){
