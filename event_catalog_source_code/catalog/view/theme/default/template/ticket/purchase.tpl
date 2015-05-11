@@ -1,5 +1,4 @@
 <?php echo $header; ?>
-
 <div class="container">
         <!--
   <ul class="breadcrumb">
@@ -11,17 +10,17 @@
   <div class="row">
     <div id="content" class="col-sm-12">
       <h1><?php echo $heading_title; ?></h1>
-      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="ticket-form" class="form-horizontal">
+      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="ticket-form" class="form-horizontal"  data-toggle="validator" role="form" >
           <!-- Start Tickets table -->
         <div class="table-responsive">
           <table class="table table-striped" id="choose-table">
             <thead>
               <tr>
-                <th class="text-center"><?php echo $column_name; ?></th>
-                <th class="text-center"><?php echo $column_price; ?></th>
-                <th class="text-center"><?php echo $column_zone; ?></th>
-                <th class="text-center"><?php echo $column_quantity; ?></th>
-                <th class="text-center"><?php echo $column_subtotal; ?></th>
+                <th class="text-center col-xs-2"><?php //echo $column_name; ?></th>
+                <th class="text-center col-xs-2"><?php //echo $column_price; ?></th>
+                <th class="text-center col-xs-4"><?php //echo $column_zone; ?></th>
+                <th class="text-center col-xs-2"><?php //echo $column_quantity; ?></th>
+                <th class="text-center col-xs-2"><?php //echo $column_subtotal; ?></th>
               </tr>
             </thead>
             <tbody>
@@ -29,8 +28,8 @@
                 <tr id="<?php echo $row ?>">
                     <td class="text-center col-xs-2 input-name"><?php echo $ticket['name'] ?></td>
                     <td class="text-center col-xs-2 input-price">$<?php echo $ticket['price'] ?></td>
-                    <td class="text-center col-xs-3">
-                        <div class=" col-md-8 col-md-offset-2">
+                    <td class="text-center col-xs-4">
+                        <div>
                             <select name="<?php echo $row ?>[zone]" class="form-control zone-input tickets-input" >
                                 <option selected="selected" value="0">Choose Zone</option>
                                 <?php foreach ($ticket['zone'] as $k=>$v) { ?>
@@ -40,7 +39,7 @@
                         </div>
                     </td>
                     <td class="text-center col-xs-2">
-                        <div class="col-md-8 col-md-offset-2">
+                        <div>
                             <input type="number" name="<?php echo $row ?>[quantity]" class='form-control quantity-input tickets-input' min="0" value="0" step="1" >
                             <input type="hidden" name="<?php echo $row ?>[name]" value="<?php echo $ticket['name'] ?>">
                             <input type="hidden" name="<?php echo $row ?>[price]" value="<?php echo $ticket['price'] ?>">
@@ -95,10 +94,10 @@
                     <label class="col-sm-2 control-label" for="input-agegroup"><?php echo $entry_agegroup; ?></label>
                     <div class="col-sm-6">
                         <select name="customer[agegroup]" class="form-control" id="input-agegroup">
-                            <?php if (!empty($agegroup)) { ?>
-                            <?php foreach ($agegroup as $value) { ?>
-                            <option value="<?php echo $value['key']; ?>" >
-                                <?php echo $value['value']; ?>
+                            <?php if (!empty($age_group['age_group'])) { ?>
+                            <?php foreach ($age_group['age_group'] as $key => $value) { ?>
+                            <option value="<?php echo $key; ?>" >
+                                <?php echo $value; ?>
                             </option>
 
                             <?php } ?>
@@ -174,7 +173,14 @@
           <div class="col-xs-12" id="shipping-details">
               <h2>Shipping Detail</h2>
               <div id="shipping-detail-pickup">
-                  Please go to 40 Eden Crescent to pickup the ticket, thank you.
+                  <?php foreach($stores as $key=>$store) { ?>
+                  <div class="radio">
+                      <label for="pickup-store-<?php echo $key ?>">
+                          <input type="radio" name="shipping-method" id="pickup-store-<?php echo $key ?>" value="<?php echo $key ?>" >
+                          <?php echo $store ?>
+                      </label>
+                  </div>
+                  <?php } ?>
               </div>
               <div id="shipping-detail-mail" class="col-sm-12">
                   <!-- Start Address Fields -->
@@ -215,7 +221,7 @@
           </div>
           <!-- End from checkout page -->
 
-          <div class="buttons">
+          <div class="buttons form-group">
               <input type="submit" class="pull-right btn btn-primary" value="<?php echo $button_checkout; ?>" id="submit">
           </div>
         </div>
