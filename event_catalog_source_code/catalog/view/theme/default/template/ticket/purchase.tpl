@@ -16,11 +16,11 @@
           <table class="table table-striped" id="choose-table">
             <thead>
               <tr>
-                <th class="text-center col-xs-2"><?php //echo $column_name; ?></th>
-                <th class="text-center col-xs-2"><?php //echo $column_price; ?></th>
-                <th class="text-center col-xs-4"><?php //echo $column_zone; ?></th>
-                <th class="text-center col-xs-2"><?php //echo $column_quantity; ?></th>
-                <th class="text-center col-xs-2"><?php //echo $column_subtotal; ?></th>
+                <th class="text-center col-xs-2"><?php echo $column_name; ?></th>
+                <th class="text-center col-xs-2"><?php echo $column_price; ?></th>
+                <th class="text-center col-xs-4"><?php echo $column_zone; ?></th>
+                <th class="text-center col-xs-2"><?php echo $column_quantity; ?></th>
+                <th class="text-center col-xs-2"><?php echo $column_subtotal; ?></th>
               </tr>
             </thead>
             <tbody>
@@ -94,6 +94,7 @@
                     <label class="col-sm-2 control-label" for="input-agegroup"><?php echo $entry_agegroup; ?></label>
                     <div class="col-sm-6">
                         <select name="customer[agegroup]" class="form-control" id="input-agegroup">
+                            <option value="0" >Choose one</option>
                             <?php if (!empty($age_group['age_group'])) { ?>
                             <?php foreach ($age_group['age_group'] as $key => $value) { ?>
                             <option value="<?php echo $key; ?>" >
