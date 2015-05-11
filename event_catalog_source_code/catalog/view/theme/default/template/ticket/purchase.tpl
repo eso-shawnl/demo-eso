@@ -157,28 +157,28 @@
 
           <!-- Come from checkout page -->
           <div class="col-xs-12" id="shipping-methods">
-              <h2>Shipping Method</h2>
+              <h2><?php echo $text_shipping_method; ?></h2>
               <div class="radio">
                   <label for="shipping-pickup">
                       <input type="radio" name="shipping-method" id="shipping-pickup" value="pickup" checked>
-                      Pickup
+                      <?php echo $text_pickup ?>
                   </label>
               </div>
               <div class="radio">
                   <label for="shipping-mail">
                       <input type="radio" name="shipping-method" id="shipping-mail" value="mail">
-                      Mail
+                      <?php echo $text_post ?>
                   </label>
               </div>
           </div>
           <div class="col-xs-12" id="shipping-details">
-              <h2>Shipping Detail</h2>
+              <h2><?php echo $text_shipping_detail; ?></h2>
               <div id="shipping-detail-pickup">
                   <?php foreach($stores as $key=>$store) { ?>
                   <div class="radio">
-                      <label for="pickup-store-<?php echo $key ?>">
-                          <input type="radio" name="shipping-method" id="pickup-store-<?php echo $key ?>" value="<?php echo $key ?>" >
-                          <?php echo $store ?>
+                      <label for="pickup-store-<?php echo $store['ticket_office_id'] ?>">
+                          <input type="radio" name="shipping-method" id="pickup-store-<?php echo $store['ticket_office_id'] ?>" value="<?php echo $store['ticket_office_id'] ?>" >
+                          <?php echo $store['name'], $store['phone'], $store['address'] ?>
                       </label>
                   </div>
                   <?php } ?>
@@ -206,17 +206,17 @@
               </div>
           </div>
           <div class="col-xs-12" id="payment-methods">
-              <h2>Payment Methods</h2>
+              <h2><?php echo $text_payment_method; ?></h2>
               <div class="radio">
                   <label for="payment-online">
                       <input type="radio" name="payment-method" id="payment-online" value="online" checked>
-                      Online banking
+                      <?php echo $text_online_banking; ?>
                   </label>
               </div>
               <div class="radio">
                   <label for="payment-offline">
                       <input type="radio" name="payment-method" id="payment-offline" value="offline">
-                      On site (EFPOS or Cash)
+                      <?php echo $text_onsite; ?>
                   </label>
               </div>
           </div>
