@@ -120,7 +120,13 @@ class ControllerTicketPurchase extends Controller {
         $data['info_telephone'] = $this->language->get('info_telephone');
         $data['text_personal_info'] = $this->language->get('text_personal_info');
         $data['button_nextstep'] = $this->language->get('button_nextstep');
-
+        $data['text_shipping_method'] = $this->language->get('text_shipping_method');
+        $data['text_pickup'] = $this->language->get('text_pickup');
+        $data['text_post'] = $this->language->get('text_post');
+        $data['text_shipping_detail'] = $this->language->get('text_shipping_detail');
+        $data['text_payment_method'] = $this->language->get('text_payment_method');
+        $data['text_online_banking'] = $this->language->get('text_online_banking');
+        $data['text_onsite'] = $this->language->get('text_onsite');
 
 
         if (isset($this->request->post['customer_group_id'])) {
@@ -360,7 +366,7 @@ class ControllerTicketPurchase extends Controller {
         $payment_method=$this->model_models_interface->model_interface(0,'configuration','by_code','get','payment_method');
         $delivery_type=$this->model_models_interface->model_interface(0,'configuration','by_code','get','delivery_type');
         $pickup_stores=$this->model_models_interface->model_interface(0,'ticket','office_by_event_id','get',50);
-        
+
         foreach ($ticket_db as $key => $value) {
             if (is_array($value) && !empty($value)) {
                 if ($key == 'ticket_price_list') {

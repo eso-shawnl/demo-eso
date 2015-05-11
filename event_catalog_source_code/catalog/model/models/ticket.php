@@ -75,10 +75,8 @@ class Ticket extends Model {
 
         if($event_id > 0){
 
-            $query = $this->db->multi_query("CALL evt_event_to_ticket_office($event_id)");
-            foreach ($query as $key =>$value) {
-                $result[$value['code']][$value['key']]=$value['value'];
-            }
+            $result = $this->db->multi_query("CALL get_ticket_office_by_event_id($event_id)");
+
         }
         else {
 
