@@ -356,6 +356,11 @@ class ControllerTicketPurchase extends Controller {
         //get age group from database
         $age_group=$this->model_models_interface->model_interface(0,'configuration','by_code','get','age_group');
 
+        //get delivery type from database
+        $payment_method=$this->model_models_interface->model_interface(0,'configuration','by_code','get','payment_method');
+        $delivery_type=$this->model_models_interface->model_interface(0,'configuration','by_code','get','delivery_type');
+        $pickup_stores=$this->model_models_interface->model_interface(0,'ticket','office_by_event_id','get',50);
+        
         foreach ($ticket_db as $key => $value) {
             if (is_array($value) && !empty($value)) {
                 if ($key == 'ticket_price_list') {
@@ -373,6 +378,10 @@ class ControllerTicketPurchase extends Controller {
         }
         $data['tickets']=$ticket_list;
         $data['age_group']=$age_group;
+        $data['payment_method']=$payment_method;
+        $data['delivery_type']=$delivery_type;
+        $data['stores']=$pickup_stores;
+        var_dump($data['stores']);
 
 			$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 

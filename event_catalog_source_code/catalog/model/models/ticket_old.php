@@ -70,23 +70,6 @@ class Ticket extends Model {
 
 	}
 
-    public function get_ticket_office_by_event_id($user,$event_id) {
-        $result=array();
-
-        if($event_id > 0){
-
-            $query = $this->db->multi_query("CALL evt_event_to_ticket_office($event_id)");
-            foreach ($query as $key =>$value) {
-                $result[$value['code']][$value['key']]=$value['value'];
-            }
-        }
-        else {
-
-        }
-        return $result;
-
-    }
-
 	public function get_ticket_total($user,$data = array()) {
 
         if(isset($data) && !empty($data)){
