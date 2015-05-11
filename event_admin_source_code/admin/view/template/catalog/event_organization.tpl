@@ -41,17 +41,17 @@
           </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-category"><span data-toggle="tooltip" title="<?php echo $help_category; ?>"><?php echo $entry_category; ?></span></label>
-            <div class="col-sm-10">
-              <input type="text" name="category" value="" placeholder="<?php echo $entry_category; ?>" id="input-category" class="form-control" />
-              <div id="event-category" class="well well-sm" style="height: 150px; overflow: auto;">
-                <?php foreach ($event_categories as $event_category) { ?>
-                <div id="event-category<?php echo $event_category['category_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $event_category['name']; ?>
-                  <input type="hidden" name="event_category[]" value="<?php echo $event_category['category_id']; ?>" />
-                </div>
-                <?php } ?>
+              <label class="col-sm-2 control-label" for="input-category"><span data-toggle="tooltip" title="<?php echo $help_category; ?>"><?php echo $entry_category; ?></span></label>
+              <div class="col-sm-10">
+                  <input type="text" name="category" value="" placeholder="<?php echo $entry_category; ?>" id="input-category" class="form-control" />
+                  <div id="event-category" class="well well-sm" style="height: 150px; overflow: auto;">
+                      <?php foreach ($event_categories as $event_category) { ?>
+                      <div id="event-category<?php echo $event_category['category_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $event_category['name']; ?>
+                          <input type="hidden" name="event_category[]" value="<?php echo $event_category['category_id']; ?>" />
+                      </div>
+                      <?php } ?>
+                  </div>
               </div>
-            </div>
           </div>
 
           <div class="form-group">
@@ -139,6 +139,10 @@ $('input[name=\'manufacturer\']').autocomplete({
 	}	
 });
 
+      $('#event-manufacturer').delegate('.fa-minus-circle', 'click', function() {
+          $(this).parent().remove();
+      });
+
 // Category
 $('input[name=\'category\']').autocomplete({
 	'source': function(request, response) {
@@ -157,7 +161,7 @@ $('input[name=\'category\']').autocomplete({
 	},
 	'select': function(item) {
 		$('input[name=\'category\']').val('');
-		
+
 		$('#event-category' + item['value']).remove();
 		
 		$('#event-category').append('<div id="event-category' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="event_category[]" value="' + item['value'] + '" /></div>');

@@ -158,13 +158,14 @@
 
 
     function Url_Encode($url)  {
+    	//return $url;
         $encode_url=string2secret($url);
 
         return $encode_url;
     }
 
     function Url_Decode($url)  {
-
+    	//return $url;
         $_array = explode('&amp;',secret2string($url));
 
         $edcode_url=array();

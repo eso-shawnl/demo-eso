@@ -43,6 +43,8 @@ class ControllerAccountRegister extends Controller {
                                                                 $this->request->post['ticket_code']) ;
             }
 
+            //send mail
+
             if(isset($customer) && $customer['result']){
                 $mail = new mailservice();
 
@@ -56,21 +58,29 @@ class ControllerAccountRegister extends Controller {
                 $mail_date['mail']['type']='reg';
                 $mail_date['mail']['send_time']='';
                 $mail_date['mail']['time']= 1;
-                $mail_date['mail']['email_address']='stevenwang0410@gmail.com';
+                $mail_date['mail']['email_address']=$this->request->post['email'];
 
-                $mail_date['data']['link']='link';
+                $mail_date['data']['link']='http://www.eso.nz/index.php?route=account/success&token='.$token;
                 $mail_date['data']['items']='';
                 $mail_date['data']['delivery_type']['id']='';
                 $mail_date['data']['delivery_type']['value']='';
 
-                $mail->send_mail($mail_date);
+                $mail_result = $mail->send_mail($mail_date);
+
+                if(isset($mail_result) && !empty($mail_result)){
+                    foreach($mail_result as $keys => $values){
+                        $mail_res =  $keys;
+                        $mail_reseason =  $values;
+                    }
+                }
+
             }
 
 
 			// Clear any previous login attempts for unregistered accounts.
 			$this->model_account_customer->deleteLoginAttempts($this->request->post['email']);
 			
-			$this->customer->login($this->request->post['email'], $this->request->post['password']);
+			//$this->customer->login($this->request->post['email'], $this->request->post['password']);
 
 			unset($this->session->data['guest']);
             unset($this->session->data['captcha']);
@@ -85,7 +95,7 @@ class ControllerAccountRegister extends Controller {
 
 			$this->model_account_activity->addActivity('register', $activity_data);
 
-			//$this->response->redirect($this->url->link('account/success'));
+			$this->response->redirect($this->url->link('account/registerback'));
 		}
 
 		$data['breadcrumbs'] = array();

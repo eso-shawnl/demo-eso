@@ -23,8 +23,8 @@ define('LANG', 'catalog');
 
 // DB
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', '172.31.22.202');
+define('DB_HOSTNAME', 'eso.c77oiajb5l6c.ap-southeast-2.rds.amazonaws.com');
 define('DB_USERNAME', 'eso');
-define('DB_PASSWORD', 'GcSY6VEaeaPswmBx');
-define('DB_DATABASE', '3a_events_op');
+define('DB_PASSWORD', '0Y6eDUPho56Um');
+define('DB_DATABASE', 'eso_events_new');
 define('DB_PREFIX', '3a_');

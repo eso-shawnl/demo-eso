@@ -116,9 +116,7 @@ div.required .control-label:before {
 	font-size: 14px;
         line-height: 14px;
 }
-#top-links {
-	padding-top: 6px;
-}
+
 #top-links a + a {
 	margin-left: 15px;
 }

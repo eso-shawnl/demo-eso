@@ -223,7 +223,7 @@ class ModelAccountCustomer extends Model {
         $newsletter         = (isset($data['newsletter']) ? (int)$data['newsletter'] : 0);
         $ip                 = $this->db->escape($this->request->server['REMOTE_ADDR']) ;
         $toke              =$this->db->escape($token);
-        $status             = 1;
+        $status             = 0;
         $approved           = (int)!$customer_group_info['approval'] ;
 
 
@@ -285,6 +285,20 @@ class ModelAccountCustomer extends Model {
 
             $this->db->query("UPDATE tb_promotion_code  SET ticket_code = " . $ticket_code .
                 " WHERE promotion_code = '" . $promotion_code . "' and ticket_code is null ");
+        }
+
+    }
+
+    public function register_check_confirm($token){
+
+        $query = $this->db->query("SELECT * from " . DB_PREFIX . "customer  where token= '" . $token ."'");
+
+        if($query->num_rows){
+            $this->db->query("UPDATE  " . DB_PREFIX . "customer set status =1 where token= '" . $token ."'");
+            return true;
+        }
+        else{
+            return false;
         }
 
     }

@@ -8,95 +8,118 @@ body {
   height: 200%;
   font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", Heiti, "黑体", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif; }
 
-.page-section {
-  width: 100%;
-  height: 50%; }
-
-.front-element {
-  position: relative;
-  z-index: 999; }
-
-h1 {
-  font-size: 3em; }
-
-.description {
-  font-size: 2em;
-  font-weight: bold; }
-
-.up-ground {
-  padding-bottom: 1em; }
-
-.button-heavy {
-  height: 2.2em;
-  width: 10em;
-  margin: 1.5em auto;
-  font-size: 2em;
-  line-height: 2em;
-  border: 0.1em solid #333;
-  cursor: pointer; }
-  .button-heavy:hover {
-    background-color: rgba(255, 255, 255, 0.5); }
-
-/* Start primary section */
-#primary-section .container {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  position: relative; }
-#primary-section .panel-overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  background-color: rgba(255, 255, 255, 0.4); }
-  #primary-section .panel-overlay .center-text {
-    margin: 20% auto;
-    text-align: center; }
-#primary-section .event-show {
-  position: fixed;
-  width: 100%;
-  height: 100%; }
-  #primary-section .event-show img {
-    display: block;
-    height: 100%; }
-
-/* End primary section */
-/* Start primary section */
-#secondary-section {
-  position: relative; }
-  #secondary-section #register-form {
+#landing {
+  /* Start primary section */
+  /* End primary section */
+  /* Start primary section */ }
+  #landing .page-section {
+    width: 100%;
+    height: 50%; }
+  #landing .front-element {
     position: relative;
     z-index: 999; }
-  #secondary-section #information {
-    position: relative;
-    z-index: 999;
-    text-align: center;
-    padding-top: 10em;
-    background-color: rgba(255, 255, 255, 0.5);
-    background-clip: content-box;
-    opacity: 0;
-    top: 5em; }
-  #secondary-section .button-heavy {
-    background-color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    width: 6em;
+  #landing h1 {
+    font-size: 3em; }
+  #landing .description {
+    font-size: 2em;
+    font-weight: bold; }
+  #landing .up-ground {
+    padding-bottom: 1em; }
+  #landing .button-heavy {
+    height: 2.2em;
+    width: 10em;
+    margin: 1.5em auto;
+    font-size: 2em;
+    line-height: 2em;
+    border: 0.1em solid #333;
+    cursor: pointer; }
+    #landing .button-heavy:hover {
+      background-color: rgba(255, 255, 255, 0.5); }
+  #landing #content {
+    margin-top: 3em; }
+  #landing #primary-section .container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    position: relative; }
+  #landing #primary-section .panel-overlay {
     position: absolute;
-    right: 1em;
-    bottom: 0.5em;
-    opacity: 0; }
-    #secondary-section .button-heavy:hover {
-      background-color: rgba(255, 255, 255, 0.7); }
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.4); }
+    #landing #primary-section .panel-overlay .center-text {
+      margin: 20% auto;
+      text-align: center; }
+  #landing #primary-section .event-show {
+    position: fixed;
+    width: 100%;
+    height: 100%; }
+    #landing #primary-section .event-show img {
+      display: block;
+      height: 100%; }
+  #landing #secondary-section {
+    position: relative; }
+    #landing #secondary-section #register-form {
+      position: relative;
+      z-index: 999; }
+    #landing #secondary-section #information {
+      position: relative;
+      z-index: 999;
+      text-align: center;
+      padding-top: 10em;
+      background-color: rgba(255, 255, 255, 0.5);
+      background-clip: content-box;
+      opacity: 0;
+      top: 5em; }
+    #landing #secondary-section .button-heavy {
+      background-color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      width: 6em;
+      position: absolute;
+      right: 1em;
+      bottom: 0.5em;
+      opacity: 0; }
+      #landing #secondary-section .button-heavy:hover {
+        background-color: rgba(255, 255, 255, 0.7); }
+  @media (max-width: 600px) {
+    #landing h1 {
+      font-size: 2em; }
+    #landing .description {
+      font-size: 1.5em; }
+    #landing .button-heavy {
+      margin-top: 2em; } }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2em; }
+.inner-white.no-padding {
+  padding: 0; }
 
-  .description {
-    font-size: 1.5em; }
+img.slide-img {
+  width: 100%;
+  display: block; }
 
-  .button-heavy {
-    margin-top: 2em; } }
+.thin-bar {
+  padding-top: 2em; }
+
+#map_canvas {
+  height: 10em; }
+
+.logo {
+  height: 2em;
+  position: absolute;
+  left: 1em; }
+
+#current-time {
+  font-family: 'Tangerine', serif;
+  font-size: 1.8em;
+  color: #c3c3c3;
+  text-align: center; }
+
+#victorw-slide {
+  display: none; }
+
+.event-show-placeholder {
+  padding: 0; }
 
 /*# sourceMappingURL=main.css.map */

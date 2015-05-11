@@ -256,25 +256,49 @@ $controller->addpreaction(new action('common/seo_url'));
 
 // router
 
+
 if (isset($request->server['QUERY_STRING']) && !empty($request->server['QUERY_STRING'])) {
 
-    foreach(Url_Decode($request->server['QUERY_STRING']) as $key =>$value){
-        $request->get[$key]=$value;
-        //$request->request[$key]=$value;
+	if(strpos($request->server['QUERY_STRING'],"&")){
+    	$QUERY_STRING=explode('&amp;',$request->server['QUERY_STRING']);
+    	$url=$QUERY_STRING[0];
+    	
+    	foreach(Url_Decode($url) as $key =>$value){
+       	  $request->get[$key]=$value;
+     	}
+	}
+	else{
+		foreach(Url_Decode($request->server['QUERY_STRING']) as $key =>$value){
+       	  $request->get[$key]=$value;
+     	}
+	}
+	
+	if (isset($request->get['route'])){
+    	$action = new Action($request->get['route']);
     }
-
-    $action = new Action($request->get['route']);
+    else{
+    	$_array = explode('&amp;',$request->server['QUERY_STRING']);
+    	header('Location: http://www.eso-demo.nz/landing.html');
+    }
+    
 } else {
-    $url_this=getSubdomain($_SERVER['HTTP_HOST'], HTTP_SERVER);
+
+	if($_SERVER['HTTP_HOST']=='www.eso-demo.nz'){
+		header('Location: http://www.eso-demo.nz/landing.html');
+	}
+	else{
+	$url_this=getSubdomain($_SERVER['HTTP_HOST'], HTTP_SERVER);
+
 
     $result_query=$db->query("select * from tb_events_to_link where name ='".$url_this."'");
 
     if(!$result_query->num_rows){
         // Action
-        $action = new Action('common/home');
+        //$action = new Action('common/home');
+        header('Location: http://www.eso-demo.nz/landing.html');
     }
     else {
-
+    
         foreach(json_decode($result_query->row['route']) as $key =>$value){
             $request->get[$key]=$value;
             //$request->request[$key]=$value;
@@ -288,7 +312,10 @@ if (isset($request->server['QUERY_STRING']) && !empty($request->server['QUERY_ST
         }
 
         $action = new Action($request->get['route']);
+        
     }
+	}
+    
 }
 //print_r($request);
 // dispatch

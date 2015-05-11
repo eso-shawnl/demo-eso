@@ -1,0 +1,1025 @@
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/store.php','en')
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_store
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:00:01 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelsalereturn
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_return`r WHERE r.return_status_id = '2'
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelreportcustomer
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_customer_online` co LEFT JOIN 3a_customer c ON (co.customer_id = c.customer_id)
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelsalecustomer
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_customer WHERE approved = '0'
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelcatalogproduct
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(DISTINCT p.product_id) AS total FROM 3a_product p LEFT JOIN 3a_product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '1' AND p.quantity = '0'
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelcatalogreview
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_review r LEFT JOIN 3a_product_description pd ON (r.product_id = pd.product_id) WHERE pd.language_id = '1'
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelmarketingaffiliate
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_affiliate WHERE approved = '0'
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:00:01 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 00:00:01 >>> (LOAD CONTROLLER FILE>>>>):common/column_left
+2015-05-05 00:00:01 >>> (LOAD CONTROLLER FILE>>>>):common/profile
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modeluseruser
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT *, (SELECT ug.name FROM `3a_user_group` ug WHERE ug.user_group_id = u.user_group_id) AS user_group FROM `3a_user` u WHERE u.user_id = '1'
+2015-05-05 00:00:01 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/profile.tpl
+2015-05-05 00:00:01 >>> (LOAD CONTROLLER FILE>>>>):common/menu
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:00:01 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/menu.tpl
+2015-05-05 00:00:01 >>> (LOAD CONTROLLER FILE>>>>):common/stats
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/stats.php','en')
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE order_status_id > '0'
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:00:01 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '7' OR order_status_id = '9' OR order_status_id = '13' OR order_status_id = '8' OR order_status_id = '14' OR order_status_id = '10' OR order_status_id = '1' OR order_status_id = '15' OR order_status_id = '11' OR order_status_id = '12' OR order_status_id = '3' OR order_status_id = '16')
+2015-05-05 00:00:01 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/stats.tpl
+2015-05-05 00:00:01 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/column_left.tpl
+2015-05-05 00:00:01 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 00:00:01 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 00:00:01 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 00:00:01 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/setting/store_list.tpl
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/setting.php','en')
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelsettingsetting
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modellocalisationlocation
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT location_id, name, address FROM 3a_location ORDER BY name ASC
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modeldesignlayout
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_layout ORDER BY name ASC
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modellocalisationcountry
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_country ORDER BY name ASC
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modellocalisationlanguage
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modellocalisationcurrency
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency ORDER BY title ASC
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modellocalisationlengthclass
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class lc LEFT JOIN 3a_length_class_description lcd ON (lc.length_class_id = lcd.length_class_id) WHERE lcd.language_id = '1'
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modellocalisationweightclass
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelsalecustomergroup
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_customer_group cg LEFT JOIN 3a_customer_group_description cgd ON (cg.customer_group_id = cgd.customer_group_id) WHERE cgd.language_id = '1' ORDER BY cgd.name ASC
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelcataloginformation
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_information i LEFT JOIN 3a_information_description id ON (i.information_id = id.information_id) WHERE id.language_id = '1' ORDER BY id.title
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modeluserapi
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_api` ORDER BY username ASC
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modellocalisationreturnstatus
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT return_status_id, name FROM 3a_return_status WHERE language_id = '1' ORDER BY name
+2015-05-05 00:00:05 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelsalereturn
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_return`r WHERE r.return_status_id = '2'
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelreportcustomer
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_customer_online` co LEFT JOIN 3a_customer c ON (co.customer_id = c.customer_id)
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelsalecustomer
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_customer WHERE approved = '0'
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelcatalogproduct
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(DISTINCT p.product_id) AS total FROM 3a_product p LEFT JOIN 3a_product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '1' AND p.quantity = '0'
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelcatalogreview
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_review r LEFT JOIN 3a_product_description pd ON (r.product_id = pd.product_id) WHERE pd.language_id = '1'
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelmarketingaffiliate
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_affiliate WHERE approved = '0'
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:00:05 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 00:00:05 >>> (LOAD CONTROLLER FILE>>>>):common/column_left
+2015-05-05 00:00:05 >>> (LOAD CONTROLLER FILE>>>>):common/profile
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modeluseruser
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT *, (SELECT ug.name FROM `3a_user_group` ug WHERE ug.user_group_id = u.user_group_id) AS user_group FROM `3a_user` u WHERE u.user_id = '1'
+2015-05-05 00:00:05 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/profile.tpl
+2015-05-05 00:00:05 >>> (LOAD CONTROLLER FILE>>>>):common/menu
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:00:05 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/menu.tpl
+2015-05-05 00:00:05 >>> (LOAD CONTROLLER FILE>>>>):common/stats
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/stats.php','en')
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE order_status_id > '0'
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:00:05 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '7' OR order_status_id = '9' OR order_status_id = '13' OR order_status_id = '8' OR order_status_id = '14' OR order_status_id = '10' OR order_status_id = '1' OR order_status_id = '15' OR order_status_id = '11' OR order_status_id = '12' OR order_status_id = '3' OR order_status_id = '16')
+2015-05-05 00:00:05 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/stats.tpl
+2015-05-05 00:00:05 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/column_left.tpl
+2015-05-05 00:00:05 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 00:00:05 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 00:00:05 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 00:00:05 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/setting/setting.tpl
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:00:06 >>> (LOAD MODEL FILE>>>>):Modellocalisationcountry
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT DISTINCT * FROM 3a_country WHERE country_id = '153'
+2015-05-05 00:00:06 >>> (LOAD MODEL FILE>>>>):Modellocalisationzone
+2015-05-05 00:00:06 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_zone WHERE country_id = '153' AND status = '1' ORDER BY name
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/setting.php','en')
+2015-05-05 00:04:32 >>> (LOAD MODEL FILE>>>>):Modelsettingsetting
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):DELETE FROM `3a_setting` WHERE store_id = '0' AND `code` = 'config'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_name', `value` = 'WWW.ESO.NZ'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_owner', `value` = 'ESO NEWZEALAND'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_address', `value` = 'Address 1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_geocode', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_email', `value` = 'info@eso.nz'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_telephone', `value` = '123456789'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fax', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_open', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_comment', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_meta_title', `value` = 'WWW.ESO.NZ'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_meta_description', `value` = 'My Store'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_meta_keyword', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_template', `value` = 'default'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_layout_id', `value` = '4'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_country_id', `value` = '153'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_zone_id', `value` = '2344'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_language', `value` = 'cn'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_admin_language', `value` = 'en'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_currency', `value` = 'NZD'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_currency_auto', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_length_class_id', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_weight_class_id', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_product_count', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_product_limit', `value` = '15'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_product_description_length', `value` = '100'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_limit_admin', `value` = '20'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_review_status', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_review_guest', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_review_mail', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_voucher_min', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_voucher_max', `value` = '1000'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_tax', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_tax_default', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_tax_customer', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_online', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_group_id', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_group_display', `value` = 'a:1:{i:0;s:1:\"1\";}', serialized = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_price', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_login_attempts', `value` = '10'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_account_id', `value` = '3'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_account_mail', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_invoice_prefix', `value` = 'INV-2013-00'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_api_id', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_cart_weight', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_checkout_guest', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_checkout_id', `value` = '5'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_order_status_id', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_processing_status', `value` = 'a:1:{i:0;s:1:\"2\";}', serialized = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_complete_status', `value` = 'a:1:{i:0;s:1:\"5\";}', serialized = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_order_mail', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_stock_display', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_stock_warning', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_stock_checkout', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_approval', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_auto', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_commission', `value` = '5'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_id', `value` = '4'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_mail', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_return_id', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_return_status_id', `value` = '2'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_logo', `value` = 'catalog/logo/eso_head_logo1.png'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_icon', `value` = 'catalog/logo/eso_icon1.png'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_category_width', `value` = '80'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_category_height', `value` = '80'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_thumb_width', `value` = '1136'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_thumb_height', `value` = '640'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_popup_width', `value` = '1280'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_popup_height', `value` = '800'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_product_width', `value` = '228'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_product_height', `value` = '228'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_additional_width', `value` = '74'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_additional_height', `value` = '74'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_related_width', `value` = '80'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_related_height', `value` = '80'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_compare_width', `value` = '90'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_compare_height', `value` = '90'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_wishlist_width', `value` = '47'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_wishlist_height', `value` = '47'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_cart_width', `value` = '47'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_cart_height', `value` = '47'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_location_width', `value` = '268'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_location_height', `value` = '50'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_hostname', `value` = 'www.eso.nz'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_port', `value` = '21'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_username', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_password', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_root', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_status', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_mail', `value` = 'a:7:{s:8:\"protocol\";s:4:\"smtp\";s:9:\"parameter\";s:0:\"\";s:13:\"smtp_hostname\";s:19:\"ssl://smtp.zoho.com\";s:13:\"smtp_username\";s:11:\"info@eso.nz\";s:13:\"smtp_password\";s:11:\"teamEso2015\";s:9:\"smtp_port\";s:3:\"587\";s:12:\"smtp_timeout\";s:2:\"30\";}', serialized = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_mail_alert', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_detection', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_key', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_score', `value` = ''
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_status_id', `value` = '7'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_secure', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_shared', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_robots', `value` = 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_seo_url', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_file_max_size', `value` = '300000'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_file_ext_allowed', `value` = 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_file_mime_allowed', `value` = 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_maintenance', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_password', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_encryption', `value` = 'e898c8e75e36b84b56e2c98bdb1c31f7'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_compression', `value` = '0'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_error_display', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_error_log', `value` = '1'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_error_filename', `value` = 'error.log'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_google_analytics', `value` = ''
+2015-05-05 00:04:32 >>> (LOAD MODEL FILE>>>>):Modellocalisationcurrency
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency WHERE code != 'NZD' AND date_modified < '2015-05-04 00:04:32'
+2015-05-05 00:04:32 >>> (EXECUTE SQL>>>>):UPDATE 3a_currency SET value = '1.00000', date_modified = '2015-05-05 00:04:32' WHERE code = 'NZD'
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/store.php','en')
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_store
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:04:33 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelsalereturn
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_return`r WHERE r.return_status_id = '2'
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelreportcustomer
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_customer_online` co LEFT JOIN 3a_customer c ON (co.customer_id = c.customer_id)
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelsalecustomer
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_customer WHERE approved = '0'
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelcatalogproduct
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(DISTINCT p.product_id) AS total FROM 3a_product p LEFT JOIN 3a_product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '1' AND p.quantity = '0'
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelcatalogreview
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_review r LEFT JOIN 3a_product_description pd ON (r.product_id = pd.product_id) WHERE pd.language_id = '1'
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelmarketingaffiliate
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_affiliate WHERE approved = '0'
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:04:33 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 00:04:33 >>> (LOAD CONTROLLER FILE>>>>):common/column_left
+2015-05-05 00:04:33 >>> (LOAD CONTROLLER FILE>>>>):common/profile
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modeluseruser
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT *, (SELECT ug.name FROM `3a_user_group` ug WHERE ug.user_group_id = u.user_group_id) AS user_group FROM `3a_user` u WHERE u.user_id = '1'
+2015-05-05 00:04:33 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/profile.tpl
+2015-05-05 00:04:33 >>> (LOAD CONTROLLER FILE>>>>):common/menu
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:04:33 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/menu.tpl
+2015-05-05 00:04:33 >>> (LOAD CONTROLLER FILE>>>>):common/stats
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/stats.php','en')
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE order_status_id > '0'
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:04:33 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '7' OR order_status_id = '9' OR order_status_id = '13' OR order_status_id = '8' OR order_status_id = '14' OR order_status_id = '10' OR order_status_id = '1' OR order_status_id = '15' OR order_status_id = '11' OR order_status_id = '12' OR order_status_id = '3' OR order_status_id = '16')
+2015-05-05 00:04:33 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/stats.tpl
+2015-05-05 00:04:33 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/column_left.tpl
+2015-05-05 00:04:33 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 00:04:33 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 00:04:33 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 00:04:33 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/setting/store_list.tpl
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/setting.php','en')
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelsettingsetting
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modellocalisationlocation
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT location_id, name, address FROM 3a_location ORDER BY name ASC
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modeldesignlayout
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_layout ORDER BY name ASC
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modellocalisationcountry
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modellocalisationlanguage
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modellocalisationcurrency
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency ORDER BY title ASC
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modellocalisationlengthclass
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modellocalisationweightclass
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelsalecustomergroup
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_customer_group cg LEFT JOIN 3a_customer_group_description cgd ON (cg.customer_group_id = cgd.customer_group_id) WHERE cgd.language_id = '1' ORDER BY cgd.name ASC
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelcataloginformation
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modeluserapi
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_api` ORDER BY username ASC
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modellocalisationreturnstatus
+2015-05-05 00:07:14 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelsalereturn
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_return`r WHERE r.return_status_id = '2'
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelreportcustomer
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_customer_online` co LEFT JOIN 3a_customer c ON (co.customer_id = c.customer_id)
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelsalecustomer
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_customer WHERE approved = '0'
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelcatalogproduct
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT COUNT(DISTINCT p.product_id) AS total FROM 3a_product p LEFT JOIN 3a_product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '1' AND p.quantity = '0'
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelcatalogreview
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_review r LEFT JOIN 3a_product_description pd ON (r.product_id = pd.product_id) WHERE pd.language_id = '1'
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelmarketingaffiliate
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_affiliate WHERE approved = '0'
+2015-05-05 00:07:14 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:07:14 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 00:07:14 >>> (LOAD CONTROLLER FILE>>>>):common/column_left
+2015-05-05 00:07:14 >>> (LOAD CONTROLLER FILE>>>>):common/profile
+2015-05-05 00:07:14 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:07:15 >>> (LOAD MODEL FILE>>>>):Modeluseruser
+2015-05-05 00:07:15 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT *, (SELECT ug.name FROM `3a_user_group` ug WHERE ug.user_group_id = u.user_group_id) AS user_group FROM `3a_user` u WHERE u.user_id = '1'
+2015-05-05 00:07:15 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/profile.tpl
+2015-05-05 00:07:15 >>> (LOAD CONTROLLER FILE>>>>):common/menu
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:07:15 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/menu.tpl
+2015-05-05 00:07:15 >>> (LOAD CONTROLLER FILE>>>>):common/stats
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/stats.php','en')
+2015-05-05 00:07:15 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE order_status_id > '0'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:07:15 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '7' OR order_status_id = '9' OR order_status_id = '13' OR order_status_id = '8' OR order_status_id = '14' OR order_status_id = '10' OR order_status_id = '1' OR order_status_id = '15' OR order_status_id = '11' OR order_status_id = '12' OR order_status_id = '3' OR order_status_id = '16')
+2015-05-05 00:07:15 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/stats.tpl
+2015-05-05 00:07:15 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/column_left.tpl
+2015-05-05 00:07:15 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 00:07:15 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 00:07:15 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/setting/setting.tpl
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:07:15 >>> (LOAD MODEL FILE>>>>):Modellocalisationcountry
+2015-05-05 00:07:15 >>> (EXECUTE SQL>>>>):SELECT DISTINCT * FROM 3a_country WHERE country_id = '153'
+2015-05-05 00:07:15 >>> (LOAD MODEL FILE>>>>):Modellocalisationzone
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/setting.php','en')
+2015-05-05 00:07:39 >>> (LOAD MODEL FILE>>>>):Modelsettingsetting
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):DELETE FROM `3a_setting` WHERE store_id = '0' AND `code` = 'config'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_name', `value` = 'WWW.ESO.NZ'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_owner', `value` = 'ESO NEWZEALAND'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_address', `value` = 'Address 1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_geocode', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_email', `value` = 'info@eso.nz'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_telephone', `value` = '123456789'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fax', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_open', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_comment', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_meta_title', `value` = 'WWW.ESO.NZ'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_meta_description', `value` = 'My Store'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_meta_keyword', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_template', `value` = 'default'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_layout_id', `value` = '4'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_country_id', `value` = '153'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_zone_id', `value` = '2344'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_language', `value` = 'cn'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_admin_language', `value` = 'en'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_currency', `value` = 'NZD'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_currency_auto', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_length_class_id', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_weight_class_id', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_product_count', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_product_limit', `value` = '15'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_product_description_length', `value` = '100'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_limit_admin', `value` = '20'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_review_status', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_review_guest', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_review_mail', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_voucher_min', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_voucher_max', `value` = '1000'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_tax', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_tax_default', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_tax_customer', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_online', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_group_id', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_group_display', `value` = 'a:1:{i:0;s:1:\"1\";}', serialized = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_price', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_login_attempts', `value` = '10'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_account_id', `value` = '3'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_account_mail', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_invoice_prefix', `value` = 'INV-2013-00'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_api_id', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_cart_weight', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_checkout_guest', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_checkout_id', `value` = '5'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_order_status_id', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_processing_status', `value` = 'a:1:{i:0;s:1:\"2\";}', serialized = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_complete_status', `value` = 'a:1:{i:0;s:1:\"5\";}', serialized = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_order_mail', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_stock_display', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_stock_warning', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_stock_checkout', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_approval', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_auto', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_commission', `value` = '5'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_id', `value` = '4'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_mail', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_return_id', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_return_status_id', `value` = '2'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_logo', `value` = 'catalog/logo/eso_head_logo1.png'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_icon', `value` = 'catalog/logo/eso_icon1.png'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_category_width', `value` = '80'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_category_height', `value` = '80'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_thumb_width', `value` = '1136'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_thumb_height', `value` = '640'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_popup_width', `value` = '1280'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_popup_height', `value` = '800'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_product_width', `value` = '228'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_product_height', `value` = '228'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_additional_width', `value` = '1136'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_additional_height', `value` = '640'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_related_width', `value` = '80'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_related_height', `value` = '80'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_compare_width', `value` = '90'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_compare_height', `value` = '90'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_wishlist_width', `value` = '47'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_wishlist_height', `value` = '47'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_cart_width', `value` = '47'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_cart_height', `value` = '47'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_location_width', `value` = '268'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_location_height', `value` = '50'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_hostname', `value` = 'www.eso.nz'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_port', `value` = '21'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_username', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_password', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_root', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_status', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_mail', `value` = 'a:7:{s:8:\"protocol\";s:4:\"smtp\";s:9:\"parameter\";s:0:\"\";s:13:\"smtp_hostname\";s:19:\"ssl://smtp.zoho.com\";s:13:\"smtp_username\";s:11:\"info@eso.nz\";s:13:\"smtp_password\";s:11:\"teamEso2015\";s:9:\"smtp_port\";s:3:\"587\";s:12:\"smtp_timeout\";s:2:\"30\";}', serialized = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_mail_alert', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_detection', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_key', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_score', `value` = ''
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_status_id', `value` = '7'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_secure', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_shared', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_robots', `value` = 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_seo_url', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_file_max_size', `value` = '300000'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_file_ext_allowed', `value` = 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_file_mime_allowed', `value` = 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_maintenance', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_password', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_encryption', `value` = 'e898c8e75e36b84b56e2c98bdb1c31f7'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_compression', `value` = '0'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_error_display', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_error_log', `value` = '1'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_error_filename', `value` = 'error.log'
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_google_analytics', `value` = ''
+2015-05-05 00:07:39 >>> (LOAD MODEL FILE>>>>):Modellocalisationcurrency
+2015-05-05 00:07:39 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency WHERE code != 'NZD' AND date_modified < '2015-05-04 00:07:39'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):UPDATE 3a_currency SET value = '1.00000', date_modified = '2015-05-05 00:07:40' WHERE code = 'NZD'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/store.php','en')
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_store
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:07:40 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelsalereturn
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_return`r WHERE r.return_status_id = '2'
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelreportcustomer
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_customer_online` co LEFT JOIN 3a_customer c ON (co.customer_id = c.customer_id)
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelsalecustomer
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_customer WHERE approved = '0'
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelcatalogproduct
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(DISTINCT p.product_id) AS total FROM 3a_product p LEFT JOIN 3a_product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '1' AND p.quantity = '0'
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelcatalogreview
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_review r LEFT JOIN 3a_product_description pd ON (r.product_id = pd.product_id) WHERE pd.language_id = '1'
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelmarketingaffiliate
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_affiliate WHERE approved = '0'
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:07:40 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 00:07:40 >>> (LOAD CONTROLLER FILE>>>>):common/column_left
+2015-05-05 00:07:40 >>> (LOAD CONTROLLER FILE>>>>):common/profile
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modeluseruser
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT *, (SELECT ug.name FROM `3a_user_group` ug WHERE ug.user_group_id = u.user_group_id) AS user_group FROM `3a_user` u WHERE u.user_id = '1'
+2015-05-05 00:07:40 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/profile.tpl
+2015-05-05 00:07:40 >>> (LOAD CONTROLLER FILE>>>>):common/menu
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:07:40 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/menu.tpl
+2015-05-05 00:07:40 >>> (LOAD CONTROLLER FILE>>>>):common/stats
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/stats.php','en')
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE order_status_id > '0'
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:07:40 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '7' OR order_status_id = '9' OR order_status_id = '13' OR order_status_id = '8' OR order_status_id = '14' OR order_status_id = '10' OR order_status_id = '1' OR order_status_id = '15' OR order_status_id = '11' OR order_status_id = '12' OR order_status_id = '3' OR order_status_id = '16')
+2015-05-05 00:07:40 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/stats.tpl
+2015-05-05 00:07:40 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/column_left.tpl
+2015-05-05 00:07:40 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 00:07:40 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 00:07:40 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 00:07:40 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/setting/store_list.tpl
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/login.php','en')
+2015-05-05 00:07:46 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 00:07:46 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 00:07:46 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 00:07:46 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 00:07:46 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 00:07:46 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/login.tpl
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/setting.php','en')
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelsettingsetting
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modellocalisationlocation
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT location_id, name, address FROM 3a_location ORDER BY name ASC
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modeldesignlayout
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_layout ORDER BY name ASC
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modellocalisationcountry
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modellocalisationlanguage
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modellocalisationcurrency
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency ORDER BY title ASC
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modellocalisationlengthclass
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modellocalisationweightclass
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelsalecustomergroup
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_customer_group cg LEFT JOIN 3a_customer_group_description cgd ON (cg.customer_group_id = cgd.customer_group_id) WHERE cgd.language_id = '1' ORDER BY cgd.name ASC
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelcataloginformation
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modeluserapi
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_api` ORDER BY username ASC
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modellocalisationreturnstatus
+2015-05-05 00:08:00 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelsalereturn
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_return`r WHERE r.return_status_id = '2'
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelreportcustomer
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_customer_online` co LEFT JOIN 3a_customer c ON (co.customer_id = c.customer_id)
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelsalecustomer
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_customer WHERE approved = '0'
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelcatalogproduct
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(DISTINCT p.product_id) AS total FROM 3a_product p LEFT JOIN 3a_product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '1' AND p.quantity = '0'
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelcatalogreview
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_review r LEFT JOIN 3a_product_description pd ON (r.product_id = pd.product_id) WHERE pd.language_id = '1'
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelmarketingaffiliate
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_affiliate WHERE approved = '0'
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:08:00 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 00:08:00 >>> (LOAD CONTROLLER FILE>>>>):common/column_left
+2015-05-05 00:08:00 >>> (LOAD CONTROLLER FILE>>>>):common/profile
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modeluseruser
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT *, (SELECT ug.name FROM `3a_user_group` ug WHERE ug.user_group_id = u.user_group_id) AS user_group FROM `3a_user` u WHERE u.user_id = '1'
+2015-05-05 00:08:00 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/profile.tpl
+2015-05-05 00:08:00 >>> (LOAD CONTROLLER FILE>>>>):common/menu
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:08:00 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/menu.tpl
+2015-05-05 00:08:00 >>> (LOAD CONTROLLER FILE>>>>):common/stats
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/stats.php','en')
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE order_status_id > '0'
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:08:00 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '7' OR order_status_id = '9' OR order_status_id = '13' OR order_status_id = '8' OR order_status_id = '14' OR order_status_id = '10' OR order_status_id = '1' OR order_status_id = '15' OR order_status_id = '11' OR order_status_id = '12' OR order_status_id = '3' OR order_status_id = '16')
+2015-05-05 00:08:00 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/stats.tpl
+2015-05-05 00:08:00 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/column_left.tpl
+2015-05-05 00:08:00 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 00:08:00 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 00:08:00 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 00:08:00 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/setting/setting.tpl
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:08:01 >>> (LOAD MODEL FILE>>>>):Modellocalisationcountry
+2015-05-05 00:08:01 >>> (EXECUTE SQL>>>>):SELECT DISTINCT * FROM 3a_country WHERE country_id = '153'
+2015-05-05 00:08:01 >>> (LOAD MODEL FILE>>>>):Modellocalisationzone
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/setting.php','en')
+2015-05-05 00:08:16 >>> (LOAD MODEL FILE>>>>):Modelsettingsetting
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):DELETE FROM `3a_setting` WHERE store_id = '0' AND `code` = 'config'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_name', `value` = 'WWW.ESO.NZ'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_owner', `value` = 'ESO NEWZEALAND'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_address', `value` = 'Address 1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_geocode', `value` = ''
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_email', `value` = 'info@eso.nz'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_telephone', `value` = '123456789'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fax', `value` = ''
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image', `value` = ''
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_open', `value` = ''
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_comment', `value` = ''
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_meta_title', `value` = 'WWW.ESO.NZ'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_meta_description', `value` = 'My Store'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_meta_keyword', `value` = ''
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_template', `value` = 'default'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_layout_id', `value` = '4'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_country_id', `value` = '153'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_zone_id', `value` = '2344'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_language', `value` = 'cn'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_admin_language', `value` = 'en'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_currency', `value` = 'NZD'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_currency_auto', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_length_class_id', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_weight_class_id', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_product_count', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_product_limit', `value` = '15'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_product_description_length', `value` = '100'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_limit_admin', `value` = '20'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_review_status', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_review_guest', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_review_mail', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_voucher_min', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_voucher_max', `value` = '1000'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_tax', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_tax_default', `value` = ''
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_tax_customer', `value` = ''
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_online', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_group_id', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_group_display', `value` = 'a:1:{i:0;s:1:\"1\";}', serialized = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_customer_price', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_login_attempts', `value` = '10'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_account_id', `value` = '3'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_account_mail', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_invoice_prefix', `value` = 'INV-2013-00'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_api_id', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_cart_weight', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_checkout_guest', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_checkout_id', `value` = '5'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_order_status_id', `value` = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_processing_status', `value` = 'a:1:{i:0;s:1:\"2\";}', serialized = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_complete_status', `value` = 'a:1:{i:0;s:1:\"5\";}', serialized = '1'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_order_mail', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_stock_display', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_stock_warning', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_stock_checkout', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_approval', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_auto', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_commission', `value` = '5'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_id', `value` = '4'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_affiliate_mail', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_return_id', `value` = '0'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_return_status_id', `value` = '2'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_logo', `value` = 'catalog/logo/eso_head_logo1.png'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_icon', `value` = 'catalog/logo/eso_icon1.png'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_category_width', `value` = '80'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_category_height', `value` = '80'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_thumb_width', `value` = '1136'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_thumb_height', `value` = '640'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_popup_width', `value` = '1280'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_popup_height', `value` = '800'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_product_width', `value` = '228'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_product_height', `value` = '228'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_additional_width', `value` = '640'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_additional_height', `value` = '1136'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_related_width', `value` = '80'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_related_height', `value` = '80'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_compare_width', `value` = '90'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_compare_height', `value` = '90'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_wishlist_width', `value` = '47'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_wishlist_height', `value` = '47'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_cart_width', `value` = '47'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_cart_height', `value` = '47'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_location_width', `value` = '268'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_image_location_height', `value` = '50'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_hostname', `value` = 'www.eso.nz'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_port', `value` = '21'
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_username', `value` = ''
+2015-05-05 00:08:16 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_password', `value` = ''
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_root', `value` = ''
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_ftp_status', `value` = '0'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_mail', `value` = 'a:7:{s:8:\"protocol\";s:4:\"smtp\";s:9:\"parameter\";s:0:\"\";s:13:\"smtp_hostname\";s:19:\"ssl://smtp.zoho.com\";s:13:\"smtp_username\";s:11:\"info@eso.nz\";s:13:\"smtp_password\";s:11:\"teamEso2015\";s:9:\"smtp_port\";s:3:\"587\";s:12:\"smtp_timeout\";s:2:\"30\";}', serialized = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_mail_alert', `value` = ''
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_detection', `value` = '0'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_key', `value` = ''
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_score', `value` = ''
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_fraud_status_id', `value` = '7'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_secure', `value` = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_shared', `value` = '0'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_robots', `value` = 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_seo_url', `value` = '0'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_file_max_size', `value` = '300000'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_file_ext_allowed', `value` = 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_file_mime_allowed', `value` = 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_maintenance', `value` = '0'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_password', `value` = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_encryption', `value` = 'e898c8e75e36b84b56e2c98bdb1c31f7'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_compression', `value` = '0'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_error_display', `value` = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_error_log', `value` = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_error_filename', `value` = 'error.log'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):INSERT INTO 3a_setting SET store_id = '0', `code` = 'config', `key` = 'config_google_analytics', `value` = ''
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modellocalisationcurrency
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency WHERE code != 'NZD' AND date_modified < '2015-05-04 00:08:17'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):UPDATE 3a_currency SET value = '1.00000', date_modified = '2015-05-05 00:08:17' WHERE code = 'NZD'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '101.98.102.47' WHERE user_id = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/setting/store.php','en')
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_store
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:08:17 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelsalereturn
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_return`r WHERE r.return_status_id = '2'
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelreportcustomer
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_customer_online` co LEFT JOIN 3a_customer c ON (co.customer_id = c.customer_id)
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelsalecustomer
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_customer WHERE approved = '0'
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelcatalogproduct
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(DISTINCT p.product_id) AS total FROM 3a_product p LEFT JOIN 3a_product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '1' AND p.quantity = '0'
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelcatalogreview
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_review r LEFT JOIN 3a_product_description pd ON (r.product_id = pd.product_id) WHERE pd.language_id = '1'
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelmarketingaffiliate
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM 3a_affiliate WHERE approved = '0'
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelsettingstore
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_store ORDER BY url
+2015-05-05 00:08:17 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 00:08:17 >>> (LOAD CONTROLLER FILE>>>>):common/column_left
+2015-05-05 00:08:17 >>> (LOAD CONTROLLER FILE>>>>):common/profile
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modeluseruser
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modeltoolimage
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT *, (SELECT ug.name FROM `3a_user_group` ug WHERE ug.user_group_id = u.user_group_id) AS user_group FROM `3a_user` u WHERE u.user_id = '1'
+2015-05-05 00:08:17 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/profile.tpl
+2015-05-05 00:08:17 >>> (LOAD CONTROLLER FILE>>>>):common/menu
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/menu.php','en')
+2015-05-05 00:08:17 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/menu.tpl
+2015-05-05 00:08:17 >>> (LOAD CONTROLLER FILE>>>>):common/stats
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/stats.php','en')
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modelsaleorder
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE order_status_id > '0'
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '5')
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '2')
+2015-05-05 00:08:17 >>> (LOAD MODEL FILE>>>>):Modellocalisationorderstatus
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):SELECT COUNT(*) AS total FROM `3a_order` WHERE (order_status_id = '7' OR order_status_id = '9' OR order_status_id = '13' OR order_status_id = '8' OR order_status_id = '14' OR order_status_id = '10' OR order_status_id = '1' OR order_status_id = '15' OR order_status_id = '11' OR order_status_id = '12' OR order_status_id = '3' OR order_status_id = '16')
+2015-05-05 00:08:17 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/stats.tpl
+2015-05-05 00:08:17 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/column_left.tpl
+2015-05-05 00:08:17 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 00:08:17 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 00:08:17 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 00:08:17 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/setting/store_list.tpl
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/login.php','en')
+2015-05-05 07:08:42 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 07:08:42 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 07:08:42 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 07:08:42 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 07:08:42 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 07:08:42 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/login.tpl
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/login.php','en')
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE username = 'admin' AND (password = SHA1(CONCAT(salt, SHA1(CONCAT(salt, SHA1('admin'))))) OR password = '21232f297a57a5a743894a0e4a801fc3') AND status = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_user WHERE user_id = '1' AND status = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):UPDATE 3a_user SET ip = '122.60.117.129' WHERE user_id = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT permission FROM 3a_user_group WHERE user_group_id = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/login.php','en')
+2015-05-05 07:09:31 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 07:09:31 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 07:09:31 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 07:09:31 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 07:09:31 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 07:09:31 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/login.tpl
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/login.php','en')
+2015-05-05 20:12:03 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 20:12:03 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 20:12:04 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 20:12:04 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 20:12:04 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 20:12:04 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 20:12:04 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/login.tpl
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_setting WHERE store_id = '0'
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):SELECT * FROM `3a_language`
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/default.php','en')
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_currency
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_weight_class wc LEFT JOIN 3a_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1'
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_length_class mc LEFT JOIN 3a_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1'
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_extension WHERE `type` = 'openbay'
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):SELECT * FROM 3a_event
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/login.php','en')
+2015-05-05 23:43:56 >>> (LOAD CONTROLLER FILE>>>>):common/header
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/header.php','en')
+2015-05-05 23:43:56 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/header.tpl
+2015-05-05 23:43:56 >>> (LOAD CONTROLLER FILE>>>>):common/footer
+2015-05-05 23:43:56 >>> (EXECUTE SQL>>>>):CALL getCaptionByPageAndLang('admin/common/footer.php','en')
+2015-05-05 23:43:56 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/footer.tpl
+2015-05-05 23:43:56 >>> (LOAD TEMPLATE FILE>>>>):/var/www/html/event_admin_source_code/admin/view/template/common/login.tpl

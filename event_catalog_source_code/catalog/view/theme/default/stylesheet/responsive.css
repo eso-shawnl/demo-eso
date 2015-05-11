@@ -221,12 +221,12 @@
 		color:#404040;
 	}
 	aside .inner-white {
-		background-color:#FFF4EC;
+		background-color:#F9F9F9;
 		position:relative;
 		padding-left: 10px;
 		padding-top: 10px;
 		z-index:15;
-		box-shadow:0 0 10px rgba(0,0,0,0.5)
+		box-shadow:0 0 5px rgba(0,0,0,0.4)
 	}
 }
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -502,9 +502,6 @@
 	} 
 	.box-product .name {
 		margin:0
-	}
-	footer > div.container {
-		display:none;
 	}
 	footer .socials,
 	footer .footer {

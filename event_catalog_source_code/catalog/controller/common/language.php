@@ -37,10 +37,14 @@ class ControllerCommonLanguage extends Controller {
 			unset($url_data['route']);
 
 			$url = '';
-
-			if ($url_data) {
-				$url = '&' . urldecode(http_build_query($url_data, '', '&'));
-			}
+            foreach($url_data as $key => $value){
+                $url = '&' . $key .'='.$value;
+            }
+            /*
+                        if ($url_data) {
+                            $url = '&' . http_build_query($url_data, '', '&');
+                        }
+            */
 
 			$data['redirect'] = $this->url->link($route, $url, $this->request->server['HTTPS']);
 		}

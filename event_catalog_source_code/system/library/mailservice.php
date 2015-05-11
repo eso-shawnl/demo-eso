@@ -16,12 +16,32 @@
 
         public function send_mail($body)
         {
-            require_once("Rest.inc.php");
             require_once('class.phpmailer.php');
             require_once('class.pop3.php');
             require_once('class.smtp.php');
+
+            $result=array();
+
+            //hard coded $body for testing
+/*          $mail_date=array();
+            $mail_date['customer']['fname']='Steven';
+            $mail_date['customer']['lname']='Wang';
+            $mail_date['customer']['gender']='';
+            $mail_date['customer']['salutation']='';
+
+            $mail_date['mail']['language_id']='en';
+            $mail_date['mail']['type']='reg';
+            $mail_date['mail']['send_time']='';
+            $mail_date['mail']['time']= 1;
+            $mail_date['mail']['email_address']='stevenwang0410@gmail.com';
+
+            $mail_date['data']['link']='http://www.sina.com';
+            $mail_date['data']['items']='';
+            $mail_date['data']['delivery_type']['id']='';
+            $mail_date['data']['delivery_type']['value']='';*/
+
             //parse the data passed to this method
-            /*foreach ($body as $key => $value) {
+            foreach ($body as $key => $value) {
                 if (is_array($value) && !empty($value)) {
                     if ($key == 'customer') {
                         foreach ($value as $k => $v) {
@@ -90,18 +110,9 @@
                         }
                     }
                 }
-            }*/
+            }
 
             $emailContent = '';
-
-            //testing purpose
-            $emailType='reg';
-            $toAddress='ylu633@aucklanduni.ac.nz';
-            $languageId='cn';
-            $firstName='Michael';
-            $link='http://www.eso.nz';
-            //$items='';
-
 
             //SMTP needs accurate times, and the PHP time zone MUST be set
             //This should be done in your php.ini, but this is how to do it if you don't have access to that
@@ -109,6 +120,7 @@
 
             //Create a new PHPMailer instance
             $mail = new PHPMailer;
+            try{
             //Tell PHPMailer to use SMTP
             $mail->isSMTP();
 
@@ -116,42 +128,23 @@
             // 0 = off (for production use)
             // 1 = client messages
             // 2 = client and server messages
-            $mail->SMTPDebug = 2;
-
-            //Ask for HTML-friendly debug output
-
-            $mail->Debugoutput = 'html';
-
-            //Set the hostname of the mail server
+            $mail->SMTPDebug = 0;
+            //$mail->Debugoutput = 'html';
             $mail->Host = 'smtp.zoho.com';
-
-            //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-
             $mail->Port = 587;
-
-            //Set the encryption system to use - ssl (deprecated) or tls
-
             $mail->SMTPSecure = 'tls';
-
-            //Whether to use SMTP authentication
             $mail->SMTPAuth = true;
-            //Username to use for SMTP authentication - use full email address for gmail
-
             $mail->Username = "info@eso.nz";
-
-            //Password to use for SMTP authentication
             $mail->Password = "teamEso2015";
-            //Set who the message is to be sent from
             $mail->setFrom('info@eso.nz', 'ESO Team');
-            //Set an alternative reply-to address
             $mail->addReplyTo('info@eso.nz', 'ESO Team');
-            //Set who the message is to be sent to
             $mail->addAddress($toAddress, '');
-            //Set the subject line
+
+
             if ($emailType == 'reg') {
                 if ($languageId == 'cn') {
                     $mail->CharSet = 'UTF-8';
-                    $mail->Subject = '邮件确认 -- ESO 团队';
+                    $mail->Subject = '购票确认 -- ESO 团队';
                     include_once('regconfirm_cn.html') ;
                     $emailContent = file_get_contents('regconfirm_cn.html',true);
                 } else {
@@ -162,13 +155,15 @@
                 $emailContent = str_replace("@URL", $link, $emailContent);
                 $emailContent = str_replace("@FIRSTNAME", $firstName, $emailContent);
             } elseif ($emailType == 'checkout') {
-                 /*if ($languageId == 'cn') {
+                 if ($languageId == 'cn') {
                      $mail->CharSet = 'UTF-8';
                      $mail->Subject = '购票确认 -- ESO 团队';
-                     $emailContent = file_get_contents('checkoutconfirm_cn.html');
+                     include_once('checkoutconfirm_cn.html') ;
+                     $emailContent = file_get_contents('checkoutconfirm_cn.html',true);
                  } else {
                      $mail->Subject = 'Checkout Confirmation';
-                     $emailContent = file_get_contents('checkoutconfirm_cn.html');
+                     include_once('checkoutconfirm_en.html');
+                     $emailContent = file_get_contents('checkoutconfirm_en.html',true);
                  }
 
                  $itemDescription='';
@@ -193,28 +188,31 @@
                 //hard-coded delivery instructions
                 $delivery = 'We will deliver your tickets to the following address';
                 $pickup = 'Please come to XXX at anytime from 9am. to 5pm. from Monday to Friday';
-
-                                if($delivery_id=='1'){
-                                    $emailContent=str_replace('@DELIVERYINS',$delivery,$emailContent);
-                                }
-                                if($delivery_id=='2'){
-                                    $emailContent=str_replace('@DELIVERYINS',$pickup,$emailContent);
-                                }
+                if($delivery_id=='1'){
+                    $emailContent=str_replace('@DELIVERYINS',$delivery,$emailContent);
+                }
+                if($delivery_id=='2'){
+                    $emailContent=str_replace('@DELIVERYINS',$pickup,$emailContent);
+                }
 
                 $emailContent = str_replace('@FIRSTNAME', $firstName, $emailContent);
                 $emailContent=str_replace('@ORDERNUM',$orderNumber,$emailContent);
-                $emailContent=str_replace('@ITEMS',$items,$emailContent);*/
+                $emailContent=str_replace('@ITEMS',$items,$emailContent);
             }
 
             $mail->msgHTML($emailContent, dirname(__FILE__));
-            //Attach an image file
-            //$mail->addAttachment('images/phpmailer_mini.png');
-            //send the message, check for errors
-            if (!$mail->send()) {
-                $this->response('', 200);
-            } else {
-                $this->response('', 406);;
-            }
-        }
 
+            $mail->send();
+                $result[1]='';
+        }
+            catch(phpmailerException $e)
+            {
+                $result[0]=$e->errorMessage();
+            }
+            catch (Exception $e){
+                $result[0]=$e->errorMessage();//Boring error messages from anything else
+            }
+
+            return $result;
+        }
     }

@@ -15,7 +15,6 @@ class ControllerModuleOrganization extends Controller {
 
         $this->load->model('catalog/manufacturer');
 
-
         $manufacturers= $this->model_catalog_product->get_event_manufacturers($this->request->get['product_id']);
 
         foreach ($manufacturers as $manufacturer_id) {
