@@ -483,6 +483,7 @@ class ControllerTicketPurchase extends Controller {
 
             //call stored procedure to insert a new order
             $result = $this->model_models_interface->model_interface(0, 'order', 'info', 'edit', $data);
+        $order_id='';
             foreach ($result as $v) {
                 if ($v['result'] == 1) {
                     $order_id = $v['reason'];

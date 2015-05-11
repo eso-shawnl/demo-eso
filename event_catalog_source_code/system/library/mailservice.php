@@ -20,6 +20,8 @@
             require_once('class.pop3.php');
             require_once('class.smtp.php');
 
+            $root=realpath($_SERVER["DOCUMENT_ROOT"]);
+
             $result=array();
 
             //hard coded $body for testing
@@ -156,12 +158,12 @@
                 $emailContent = str_replace("@FIRSTNAME", $firstName, $emailContent);
             } elseif ($emailType == 'checkout') {
                  if ($languageId == 'cn') {
-                     $mail->CharSet = 'UTF-8';
-                     $mail->Subject = '购票确认 -- ESO 团队';
-                     include_once('checkoutconfirm_cn.html') ;
-                     $emailContent = file_get_contents('checkoutconfirm_cn.html',true);
-                 } else {
-                     $mail->Subject = 'Checkout Confirmation';
+                    $mail->CharSet = 'UTF-8';
+                    $mail->Subject = '购票确认 -- ESO 团队';
+                    include_once('checkoutconfirm_cn.html') ;
+                    $emailContent = file_get_contents('checkoutconfirm_cn.html',true);
+                } else {
+                     $mail->Subject = 'Ticket Purchase Confirmation - ESO Team';
                      include_once('checkoutconfirm_en.html');
                      $emailContent = file_get_contents('checkoutconfirm_en.html',true);
                  }
@@ -171,16 +173,16 @@
                      foreach ($items as $k => $v) {
                          foreach ($v as $k1 => $v1) {
                              if ($k1 == 'name') {
-                                 $itemDescription += 'Item Name:' . $v1 . '<br/>';
+                                 $itemDescription .= 'Item Name:' . $v1 . '<br/>';
                              }
                              if ($k1 == 'price') {
-                                 $itemDescription += 'Item Price:' . $v1 . '<br/>';
+                                 $itemDescription .= 'Item Price:' . $v1 . '<br/>';
                              }
-                             if ($k1 == 'Zone') {
-                                 $itemDescription += 'Zone:' . $v1 . '<br/>';
+                             if ($k1 == 'zone') {
+                                 $itemDescription .= 'zone:' . $v1 . '<br/>';
                              }
                              if ($k1 == 'quantity') {
-                                 $itemDescription += 'Quantity:' . $v1 . '<br/>';
+                                 $itemDescription .= 'Quantity:' . $v1 . '<br/>';
                              }
                          }
                      }
@@ -196,8 +198,8 @@
                 }
 
                 $emailContent = str_replace('@FIRSTNAME', $firstName, $emailContent);
-                $emailContent=str_replace('@ORDERNUM',$orderNumber,$emailContent);
-                $emailContent=str_replace('@ITEMS',$items,$emailContent);
+                $emailContent=str_replace('@ORDERID',$orderNumber,$emailContent);
+                $emailContent=str_replace('@ITEMS',$itemDescription,$emailContent);
             }
 
             $mail->msgHTML($emailContent, dirname(__FILE__));

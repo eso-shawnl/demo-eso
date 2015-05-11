@@ -281,13 +281,11 @@ class ControllerAccountRegister extends Controller {
 				}
 			}
 		}
-
 		if (isset($this->request->post['customer_group_id'])) {
 			$data['customer_group_id'] = $this->request->post['customer_group_id'];
 		} else {
 			$data['customer_group_id'] = $this->config->get('config_customer_group_id');
 		}
-
 
 		if (isset($this->request->post['firstname'])) {
 			$data['firstname'] = $this->request->post['firstname'];
