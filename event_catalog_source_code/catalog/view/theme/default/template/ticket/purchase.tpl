@@ -73,7 +73,7 @@
               <div class="form-group required">
                     <label class="col-sm-2 control-label" for="input-firstname"><?php echo $entry_firstname; ?></label>
                     <div class="col-sm-6">
-                        <input type="text" name="customer[firstname]" value="<?php echo $firstname; ?>" placeholder="<?php echo $entry_firstname; ?>" id="input-firstname" class="form-control" />
+                        <input type="text" name="customer[firstname]" value="<?php echo $firstname; ?>" placeholder="<?php echo $entry_firstname; ?>" id="input-firstname" class="form-control" required />
                         <?php if ($error_firstname) { ?>
                         <div class="text-danger"><?php echo $error_firstname; ?></div>
                         <?php } ?>
@@ -83,7 +83,7 @@
               <div class="form-group required">
                     <label class="col-sm-2 control-label" for="input-lastname"><?php echo $entry_lastname; ?></label>
                     <div class="col-sm-6">
-                        <input type="text" name="customer[lastname]" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname" class="form-control" />
+                        <input type="text" name="customer[lastname]" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname" class="form-control" required />
                         <?php if ($error_lastname) { ?>
                         <div class="text-danger"><?php echo $error_lastname; ?></div>
                         <?php } ?>
@@ -113,7 +113,7 @@
             <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
                 <div class="col-sm-6">
-                    <input type="email" name="customer[email]" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
+                    <input type="email" name="customer[email]" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" required />
                     <?php if ($error_email) { ?>
                     <div class="text-danger"><?php echo $error_email; ?></div>
                     <?php } ?>
@@ -123,7 +123,7 @@
             <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_confirm_email; ?></label>
                 <div class="col-sm-6">
-                    <input type="email" name="" value="<?php echo $email; ?>" placeholder="<?php echo $entry_confirm_email; ?>" id="input-email" class="form-control" />
+                    <input type="email" name="" value="<?php echo $email; ?>" placeholder="<?php echo $entry_confirm_email; ?>" id="input-email" class="form-control" required />
                     <?php if ($error_email) { ?>
                     <div class="text-danger"><?php echo $error_email; ?></div>
                     <?php } ?>
@@ -157,7 +157,7 @@
 
           <!-- Come from checkout page -->
           <div class="col-xs-12" id="shipping-methods">
-              <h2><?php echo $text_shipping_method; ?></h2>
+              <h2 class="required"><?php echo $text_shipping_method; ?></h2>
               <div class="radio">
                   <label for="shipping-pickup">
                       <input type="radio" name="customer[shipping_method]" id="shipping-pickup" value="pickup" checked>
@@ -187,7 +187,7 @@
                   <!-- Start Address Fields -->
                   <fieldset>
                       <legend><?php echo $text_your_address; ?></legend>
-                      <div class="form-group">
+                      <div class="form-group required">
                           <label class="col-sm-2 control-label" for="autocomplete"><?php echo $entry_full_address; ?></label>
                           <div class="col-sm-6" >
                               <input type="text" name="customer[full_address]" value="<?php echo $full_address; ?>" placeholder="<?php echo $entry_full_address; ?>" onFocus="geolocate()" id="autocomplete"  class="form-control" />

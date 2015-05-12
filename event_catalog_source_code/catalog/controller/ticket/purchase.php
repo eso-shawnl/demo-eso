@@ -418,11 +418,11 @@ class ControllerTicketPurchase extends Controller {
     public function checkout(){
         //To do - get purchase data from view
         $purchase_array=array();
-        //$data=$this->request->post;
+        $temp_array=$this->request->post;
         //var_dump($data);
-        //validate user information from form
-        if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate($this->request->post['customer'])){
-            foreach($this->request->post as $k => $v) {
+        //validate user information from form  && $this->validate($temp_array['customer'])
+        if (($this->request->server['REQUEST_METHOD'] == 'POST')){
+            foreach($temp_array as $k => $v) {
                 if (isset($v) && !empty($v)) {
                     if ($k != 'total' && $k != 'customer') {
                         if ($v['subtotal'] != '0.00') {
@@ -431,8 +431,8 @@ class ControllerTicketPurchase extends Controller {
                     }
                 }
             };
-            $total=$data['total'];
-            $this->submit($data['customer'],$purchase_array,$total);
+            $total=$temp_array['total'];
+            $this->submit($temp_array['customer'],$purchase_array,$total);
             
             $this->response->redirect($this->url->link('ticket/success'));
         }
@@ -567,7 +567,7 @@ class ControllerTicketPurchase extends Controller {
 
 
     public function validate($data) {
-   
+  
         if(isset($data['firstname'])) {
             if ((utf8_strlen(trim($data['firstname'])) < 1) || (utf8_strlen($data['firstname'])) > 32) {
                 $this->error['firstname'] = $this->language->get('error_firstname');
@@ -632,7 +632,7 @@ class ControllerTicketPurchase extends Controller {
                 $this->error['promotion_code'] = $this->language->get('error_promotion_code');
             }
         }
-die;
+
 //        // Agree to terms
 //        if ($this->config->get('config_account_id')) {
 //            $this->load->model('catalog/information');

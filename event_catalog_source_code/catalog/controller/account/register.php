@@ -200,6 +200,7 @@ class ControllerAccountRegister extends Controller {
 			$data['error_telephone'] = '';
 		}
 
+/* Robin 2015 05 12 
 		if (isset($this->error['street_number'])) {
 			$data['error_street_number'] = $this->error['street_number'];
 		} else {
@@ -241,6 +242,7 @@ class ControllerAccountRegister extends Controller {
 		} else {
 			$data['error_zone'] = '';
 		}
+*/
 
 		if (isset($this->error['custom_field'])) {
 			$data['error_custom_field'] = $this->error['custom_field'];
@@ -323,6 +325,7 @@ class ControllerAccountRegister extends Controller {
 			$data['company'] = '';
 		}
 
+/* robin 2015 05 12 
         if (isset($this->request->post['full_address'])) {
             $data['full_address'] = $this->request->post['full_address'];
         } else {
@@ -370,7 +373,7 @@ class ControllerAccountRegister extends Controller {
 		} else {
 			$data['zone'] = '';
 		}
-
+*/
         if (isset($this->request->post['promotion_code'])) {
             $data['promotion_code'] = $this->request->post['promotion_code'];
         } else {
@@ -495,6 +498,7 @@ class ControllerAccountRegister extends Controller {
         }
 
 
+/* Robin 2015 05 12 
         if(isset($this->request->post['route'])) {
             if ((utf8_strlen(trim($this->request->post['route'])) < 3) || (utf8_strlen(trim($this->request->post['route'])) > 128)) {
                 $this->error['route'] = $this->language->get('error_route');
@@ -524,7 +528,7 @@ class ControllerAccountRegister extends Controller {
                 $this->error['zone'] = $this->language->get('error_zone');
             }
         }
-
+*/
 		// Customer Group
 		if (isset($this->request->post['customer_group_id']) && is_array($this->config->get('config_customer_group_display')) && in_array($this->request->post['customer_group_id'], $this->config->get('config_customer_group_display'))) {
 			$customer_group_id = $this->request->post['customer_group_id'];

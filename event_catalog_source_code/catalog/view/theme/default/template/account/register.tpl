@@ -105,6 +105,7 @@
               </div>
 
           </fieldset>
+<!-- Robin 2015 05 12
           <fieldset>
               <legend><?php echo $text_your_address; ?></legend>
               <div class="form-group">
@@ -179,6 +180,7 @@
 
 
           </fieldset>
+-->          
           <fieldset>
               <legend><?php echo $text_your_otherinfo; ?></legend>
               <div class="form-group">
