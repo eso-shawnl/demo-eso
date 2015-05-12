@@ -23,7 +23,7 @@
             $root=realpath($_SERVER["DOCUMENT_ROOT"]);
 
             $result=array();
-
+            $orderNumber='';
             //hard coded $body for testing
 /*          $mail_date=array();
             $mail_date['customer']['fname']='Steven';

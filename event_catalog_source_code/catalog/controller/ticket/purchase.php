@@ -387,7 +387,6 @@ class ControllerTicketPurchase extends Controller {
         $data['payment_method']=$payment_method;
         $data['delivery_type']=$delivery_type;
         $data['stores']=$pickup_stores;
-        var_dump($data['stores']);
 
 			$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 
@@ -413,10 +412,9 @@ class ControllerTicketPurchase extends Controller {
         //To do - get purchase data from view
         $purchase_array=array();
         $data=$this->request->post;
-        var_dump($data['customer']);
-
+        //var_dump($data);
         //validate user information from form
-        if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate($data['customer'])){
+        //if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate($data['customer'])){
             foreach($data as $k => $v) {
                 if (isset($v) && !empty($v)) {
                     if ($k != 'total' && $k != 'customer') {
@@ -428,7 +426,9 @@ class ControllerTicketPurchase extends Controller {
             };
             $total=$data['total'];
             $this->submit($data['customer'],$purchase_array,$total);
-        }
+            
+            $this->response->redirect($this->url->link('ticket/success'));
+        //}
     }
     public function submit($customer_info,$purchase_array,$total)
     {
@@ -468,7 +468,7 @@ class ControllerTicketPurchase extends Controller {
             $data['payment_method'] = 1;//1 represents online banking, 2 represents EFPOS/cash
             $data['delivery_type']=1;//1 represents post, 2 represents pickup
 
-            if($customer_info['delivery']=='delivery_mail'){
+            if($customer_info['shipping_method']==1){
                 $data['shipping_firstname'] = $customer_info['firstname'];
                 $data['shipping_lastname'] = $customer_info['lastname'];
                 $data['shipping_company'] = 'Beyond Media';
@@ -483,7 +483,6 @@ class ControllerTicketPurchase extends Controller {
             //$data['shipping_zone_id'];
             //$data['shipping_address_format'];
             //$data['shipping_custom_field'];
-            //$data['shipping_method'];
             //$data['shipping_code'];
             $data['comment'] = 'Please call first before delivery';
             $data['total'] =$total;

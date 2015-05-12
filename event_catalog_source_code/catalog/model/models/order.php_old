@@ -58,9 +58,9 @@ class Order extends Model {
 
         $status             = $this->db->escape($data['status']);
 
-        if(!empty($order_id)){
+        if($order_id > 0){
 
-            $query = $this->db->multi_query("CALL get_order_for_customer('$order_id'',$user,$status)");
+            $query = $this->db->multi_query("CALL get_order_for_customer($order_id,$user,$status)");
 
             if(!empty($query)){
                 $result['order'] =$query;
@@ -87,9 +87,9 @@ class Order extends Model {
 
         $order_detail_id    = $this->db->escape(isset($data['order_detail_id']) ? $data['order_detail_id'] : 0);
 
-        if(!empty($order_id) && !empty($order_detail_id)){
+        if($order_id > 0 && $order_detail_id >=0){
 
-            $query = $this->db->multi_query("CALL get_order_detail_for_customer('$order_id','$order_detail_id',$user,$status)");
+            $query = $this->db->multi_query("CALL get_order_detail_for_customer($order_id,$order_detail_id,$user,$status)");
 
             if(!empty($query)){
                 $result['order_detail'] =$query;
@@ -113,9 +113,9 @@ class Order extends Model {
 
         $order_id   = $this->db->escape($order_id);
 
-        if(!empty($order_id)){
+        if($order_id > 0){
 
-            $query = $this->db->multi_query("CALL get_order_by_ID_Status('$order_id')");
+            $query = $this->db->multi_query("CALL get_order_by_ID_Status($order_id)");
 
         }
         else {
@@ -138,9 +138,9 @@ class Order extends Model {
 
         $order_deatail_row_id   = $this->db->escape($order_deatail_row_id);
 
-        if(!empty($order_deatail_row_id)){
+        if($order_deatail_row_id > 0){
 
-            $query = $this->db->multi_query("CALL get_order_by_ID_Status('$order_deatail_row_id')");
+            $query = $this->db->multi_query("CALL get_order_by_ID_Status($order_deatail_row_id)");
 
         }
         else {
@@ -163,7 +163,7 @@ class Order extends Model {
 
         if(is_array($data) && !empty($data) && $user>=0) {
 
-            $order_id = $this->db->escape(isset($data['order_id']) ? $data['order_id'] : '');
+            $order_id = $this->db->escape(isset($data['order_id']) ? $data['order_id'] : 0);
             $order_type_id = $this->db->escape(isset($data['order_type_id']) ? $data['order_type_id'] : 0);
             $invoice_no = $this->db->escape(isset($data['invoice_no']) ? $data['invoice_no'] : '');
             $invoice_prefix = $this->db->escape(isset($data['invoice_prefix']) ? $data['invoice_prefix'] : '');
@@ -173,8 +173,6 @@ class Order extends Model {
             $lastname = $this->db->escape(isset($data['lastname']) ? $data['lastname'] : '');
             $email = $this->db->escape(isset($data['email']) ? $data['email'] : '');
             $telephone = $this->db->escape(isset($data['telephone']) ? $data['telephone'] : '');
-            $payment_method = $this->db->escape(isset($data['payment_method']) ? $data['payment_method'] : 0);
-            $deliery_type = $this->db->escape(isset($data['delivery_type']) ? $data['delivery_type'] : 0);
             $shipping_firstname = $this->db->escape(isset($data['shipping_firstname']) ? $data['shipping_firstname'] : '');
             $shipping_lastname = $this->db->escape(isset($data['shipping_lastname']) ? $data['shipping_lastname'] : '');
             $shipping_company = $this->db->escape(isset($data['shipping_company']) ? $data['shipping_company'] : '');
@@ -201,7 +199,7 @@ class Order extends Model {
             $operator_id = $this->db->escape($user);
 
 
-            $this->db->query("call edit_order('$order_id',
+            $this->db->query("call edit_order($order_id,
                                             $order_type_id,
                                             '$invoice_no',
                                             '$invoice_prefix',
@@ -211,8 +209,6 @@ class Order extends Model {
                                             '$lastname',
                                             '$email',
                                             '$telephone',
-                                            $payment_method,
-                                            $deliery_type,
                                             '$shipping_firstname',
                                             '$shipping_lastname',
                                             '$shipping_company',
@@ -257,16 +253,16 @@ class Order extends Model {
 
             foreach ($data as $key => $value) {
 
-                $order_detail_row_id = $this->db->escape(isset($value['order_detail_row_id']) ? $value['order_detail_row_id'] : '');
-                $order_id = $this->db->escape(isset($value['order_id']) ? $value['order_id'] : 1);
+                $order_detail_row_id = $this->db->escape(isset($value['order_detail_row_id']) ? $value['order_detail_row_id'] : 0);
+                $order_id = $this->db->escape(isset($value['order_id']) ? $value['order_id'] : 0);
                 $order_product_id = $this->db->escape(isset($value['order_product_id']) ? $value['order_product_id'] : 1);
                 $order_product_type = $this->db->escape(isset($value['order_product_type']) ? $value['order_product_type'] : 1);
-                $product_quantities = $this->db->escape(isset($value['product_quantities']) ? $value['product_quantities'] : 1);
-                $product_price = $this->db->escape(isset($value['product_price']) ? $value['product_price'] : 1);
+                $product_quantities = $this->db->escape(isset($value['product_quantities']) ? $value['product_quantities'] : 0);
+                $product_price = $this->db->escape(isset($value['product_price']) ? $value['product_price'] : 0);
                 $discount_rate = $this->db->escape(isset($value['discount_rate']) ? $value['discount_rate'] : 1);
                 $reward = $this->db->escape(isset($value['reward']) ? $value['reward'] : 1);
 
-                $status = $this->db->escape(isset($value['status']) ? $value['status'] : 1);
+                $status = $this->db->escape(isset($value['status']) ? $value['status'] : 0);
                 $created_date = $this->db->escape(isset($value['created_date']) ? $value['created_date'] : '0000-00-00');
                 $modified_date = $this->db->escape(isset($value['modified_date']) ? $value['modified_date'] : '0000-00-00');
                 $operator_id = $this->db->escape($user);
@@ -404,8 +400,8 @@ class Order extends Model {
             //if ($this->check_order($data['event_id'],$data['order']) &&
             //    $this->check_order_detail($data['event_id'],$data['order_detail'])) {
 
-            $this->edit_order($user,$data['order']);
-            $this->edit_order_detail($user,$data['order_detail']);
+                $this->edit_order($user,$data['order']);
+                $this->edit_order_detail($user,$data['order_detail']);
 
             //}
             //else{
