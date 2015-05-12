@@ -1,5 +1,6 @@
 <?php
 class ControllerTicketPurchase extends Controller {
+	private $error = array();
 	public function index() {
 		$this->load->language('ticket/purchase');
         $this->load->model('models/interface');
@@ -130,120 +131,104 @@ class ControllerTicketPurchase extends Controller {
 
         $data['text_bank_account'] = $this->config->get('bank_account') ;
 
-
+var_dump($this->request->post);
         if (isset($this->request->post['customer_group_id'])) {
             $data['customer_group_id'] = $this->request->post['customer_group_id'];
         } else {
             $data['customer_group_id'] = $this->config->get('config_customer_group_id');
         }
-
-        if (isset($this->request->post['firstname'])) {
-            $data['firstname'] = $this->request->post['firstname'];
+        
+        if (isset($this->request->post['customer']['firstname'])) {
+            $data['firstname'] = $this->request->post['customer']['firstname'];
         } else {
             $data['firstname'] = '';
         }
 
-        if (isset($this->request->post['lastname'])) {
-            $data['lastname'] = $this->request->post['lastname'];
+        if (isset($this->request->post['customer']['lastname'])) {
+            $data['lastname'] = $this->request->post['customer']['lastname'];
         } else {
             $data['lastname'] = '';
         }
 
-        if (isset($this->request->post['email'])) {
-            $data['email'] = $this->request->post['email'];
+        if (isset($this->request->post['customer']['email'])) {
+            $data['email'] = $this->request->post['customer']['email'];
         } else {
             $data['email'] = '';
         }
 
-        if (isset($this->request->post['telephone'])) {
-            $data['telephone'] = $this->request->post['telephone'];
+        if (isset($this->request->post['customer']['phone'])) {
+            $data['phone'] = $this->request->post['customer']['phone'];
         } else {
-            $data['telephone'] = '';
+            $data['phone'] = '';
         }
 
-        if (isset($this->request->post['fax'])) {
-            $data['fax'] = $this->request->post['fax'];
-        } else {
-            $data['fax'] = '';
-        }
 
-        if (isset($this->request->post['company'])) {
-            $data['company'] = $this->request->post['company'];
-        } else {
-            $data['company'] = '';
-        }
-
-        if (isset($this->request->post['full_address'])) {
-            $data['full_address'] = $this->request->post['full_address'];
+        if (isset($this->request->post['customer']['full_address'])) {
+            $data['full_address'] = $this->request->post['customer']['full_address'];
         } else {
             $data['full_address'] = '';
         }
 
-        if (isset($this->request->post['street_number'])) {
-            $data['street_number'] = $this->request->post['street_number'];
+        if (isset($this->request->post['customer']['street_number'])) {
+            $data['street_number'] = $this->request->post['customer']['street_number'];
         } else {
             $data['street_number'] = '';
         }
 
-        if (isset($this->request->post['route'])) {
-            $data['route'] = $this->request->post['route'];
+        if (isset($this->request->post['customer']['route'])) {
+            $data['route'] = $this->request->post['customer']['route'];
         } else {
             $data['route'] = '';
         }
 
-        if (isset($this->request->post['postalcode'])) {
-            $data['postcode'] = $this->request->post['postalcode'];
+        if (isset($this->request->post['customer']['postalcode'])) {
+            $data['postcode'] = $this->request->post['customer']['postalcode'];
         } else {
             $data['postcode'] = '';
         }
 
-        if (isset($this->request->post['city'])) {
-            $data['city'] = $this->request->post['city'];
+        if (isset($this->request->post['customer']['city'])) {
+            $data['city'] = $this->request->post['customer']['city'];
         } else {
             $data['city'] = '';
         }
 
-        if (isset($this->request->post['suburb'])) {
-            $data['suburb'] = $this->request->post['suburb'];
+        if (isset($this->request->post['customer']['suburb'])) {
+            $data['suburb'] = $this->request->post['customer']['suburb'];
         } else {
             $data['suburb'] = '';
         }
 
-        if (isset($this->request->post['country_id'])) {
-            $data['country'] = $this->request->post['country_id'];
+        if (isset($this->request->post['customer']['country_id'])) {
+            $data['country'] = $this->request->post['customer']['country_id'];
         } else {
             $data['country'] = '';
         }
 
-        if (isset($this->request->post['zone'])) {
-            $data['zone'] = $this->request->post['zone'];
+        if (isset($this->request->post['customer']['zone'])) {
+            $data['zone'] = $this->request->post['customer']['zone'];
         } else {
             $data['zone'] = '';
         }
 
-        if (isset($this->request->post['promotion_code'])) {
-            $data['promotion_code'] = $this->request->post['promotion_code'];
+        if (isset($this->request->post['customer']['promotion_code'])) {
+            $data['promotion_code'] = $this->request->post['customer']['promotion_code'];
         } else {
             $data['promotion_code'] = '';
         }
 
-        if (isset($this->request->post['ticket_code'])) {
-            $data['ticket_code'] = $this->request->post['ticket_code'];
+        if (isset($this->request->post['customer']['ticket_code'])) {
+            $data['ticket_code'] = $this->request->post['customer']['ticket_code'];
         } else {
             $data['ticket_code'] = '';
         }
-
-        if (isset($this->request->post['password'])) {
-            $data['password'] = $this->request->post['password'];
+        
+        if (isset($this->request->post['customer']['agegroup'])) {
+            $data['agegroup_1'] = $this->request->post['customer']['agegroup'];
         } else {
-            $data['password'] = '';
+            $data['agegroup_1'] = '';
         }
-
-        if (isset($this->request->post['confirm_password'])) {
-            $data['confirm_password'] = $this->request->post['confirm_password'];
-        } else {
-            $data['confirm_password'] = '';
-        }
+        
         if (isset($this->error['warning'])) {
             $data['error_warning'] = $this->error['warning'];
         } else {
@@ -275,70 +260,17 @@ class ControllerTicketPurchase extends Controller {
             $data['error_telephone'] = '';
         }
 
-        if (isset($this->error['street_number'])) {
-            $data['error_street_number'] = $this->error['street_number'];
-        } else {
-            $data['error_street_number'] = '';
-        }
-
-        if (isset($this->error['route'])) {
-            $data['error_route'] = $this->error['route'];
-        } else {
-            $data['error_route'] = '';
-        }
-
-        if (isset($this->error['city'])) {
-            $data['error_city'] = $this->error['city'];
-        } else {
-            $data['error_city'] = '';
-        }
-
-        if (isset($this->error['suburb'])) {
-            $data['error_suburb'] = $this->error['suburb'];
-        } else {
-            $data['error_suburb'] = '';
-        }
-
-        if (isset($this->error['postcode'])) {
-            $data['error_postcode'] = $this->error['postcode'];
-        } else {
-            $data['error_postcode'] = '';
-        }
-
-        if (isset($this->error['country'])) {
-            $data['error_country'] = $this->error['country'];
-        } else {
-            $data['error_country'] = '';
-        }
-
-        if (isset($this->error['zone'])) {
-            $data['error_zone'] = $this->error['zone'];
-        } else {
-            $data['error_zone'] = '';
-        }
-
-        if (isset($this->error['custom_field'])) {
-            $data['error_custom_field'] = $this->error['custom_field'];
-        } else {
-            $data['error_custom_field'] = array();
-        }
-
-        if (isset($this->error['password'])) {
-            $data['error_password'] = $this->error['password'];
-        } else {
-            $data['error_password'] = '';
-        }
-
-        if (isset($this->error['confirm_password'])) {
-            $data['error_confirm_password'] = $this->error['confirm_password'];
-        } else {
-            $data['error_confirm_password'] = '';
-        }
 
         if (isset($this->error['confirm_email'])) {
             $data['error_confirm_email'] = $this->error['confirm_email'];
         } else {
             $data['error_confirm_email'] = '';
+        }
+        
+        if (isset($this->error['promotion_code'])) {
+            $data['error_promotion_code'] = $this->error['promotion_code'];
+        } else {
+            $data['error_promotion_code'] = '';
         }
 
         if ($this->config->get('config_account_id')) {
@@ -370,14 +302,31 @@ class ControllerTicketPurchase extends Controller {
         $pickup_stores=$this->model_models_interface->model_interface(0,'ticket','office_by_event_id','get',50);
 
         $bank_account=$this->model_models_interface->model_interface(0,'configuration','by_code','get','bank_account');
-
-
+		
         foreach ($ticket_db as $key => $value) {
+        
             if (is_array($value) && !empty($value)) {
                 if ($key == 'ticket_price_list') {
                     foreach($value as $v){
                                 $ticket_list[$v['row_id']]['name']=$v['ticket_level_name'];
                                 $ticket_list[$v['row_id']]['price']=$v['price'];
+                                //start steven reset value
+                                foreach($this->request->post as $k1 => $v1){
+                                	
+                                	if($v['row_id'] == $k1){
+                                		foreach($v1 as $k2 =>$v2){
+                                			if($k2 == 'quantity'){
+                                			$ticket_list[$v['row_id']]['quantity']=$v2;
+                                			
+                                			}
+                                			if($k2 == 'zone'){
+                                			$ticket_list[$v['row_id']]['zone']=$v2;
+                                			
+                                			}
+                                		}
+                                	}
+                                } 
+                                //end
                     }
                 }
                 if($key=='ticket_position_list'){
@@ -387,6 +336,8 @@ class ControllerTicketPurchase extends Controller {
                 }
             }
         }
+        print_r($ticket_list);
+        
         $data['tickets']=$ticket_list;
         $data['age_group']=$age_group;
         $data['payment_method']=$payment_method;
@@ -399,9 +350,9 @@ class ControllerTicketPurchase extends Controller {
 
 			//$this->load->model('extension/extension');
 
-		      $data['checkout_buttons'] = array();
+		    $data['checkout_buttons'] = array();
 
-		      $data['column_left'] = $this->load->controller('common/column_left');
+		    $data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
@@ -421,7 +372,7 @@ class ControllerTicketPurchase extends Controller {
         $temp_array=$this->request->post;
         //var_dump($data);
         //validate user information from form  && $this->validate($temp_array['customer'])
-        if (($this->request->server['REQUEST_METHOD'] == 'POST')){
+        if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()){
             foreach($temp_array as $k => $v) {
                 if (isset($v) && !empty($v)) {
                     if ($k != 'total' && $k != 'customer') {
@@ -434,7 +385,10 @@ class ControllerTicketPurchase extends Controller {
             $total=$temp_array['total'];
             $this->submit($temp_array['customer'],$purchase_array,$total);
             
-            $this->response->redirect($this->url->link('ticket/success'));
+            //$this->response->redirect($this->url->link('ticket/success'));
+        }
+        else{
+        	$this->index();
         }
     }
     public function submit($customer_info,$purchase_array,$total)
@@ -566,21 +520,21 @@ class ControllerTicketPurchase extends Controller {
         }
 
 
-    public function validate($data) {
-  
-        if(isset($data['firstname'])) {
-            if ((utf8_strlen(trim($data['firstname'])) < 1) || (utf8_strlen($data['firstname'])) > 32) {
+    public function validate() {
+  	
+        if(isset($this->request->post['customer']['firstname'])) {
+            if ((utf8_strlen(trim($this->request->post['customer']['firstname'])) < 1) || (utf8_strlen($this->request->post['customer']['firstname'])) > 32) {
                 $this->error['firstname'] = $this->language->get('error_firstname');
             }
         }
 
-        if(isset($data['lastname'])) {
-            if ((utf8_strlen(trim($data['lastname'])) < 1) || (utf8_strlen(trim($data['lastname'])) > 32)) {
+        if(isset($this->request->post['customer']['lastname'])) {
+            if ((utf8_strlen(trim($this->request->post['customer']['lastname'])) < 1) || (utf8_strlen(trim($this->request->post['customer']['lastname'])) > 32)) {
                 $this->error['lastname'] = $this->language->get('error_lastname');
             }
         }
 
-        if ((utf8_strlen($data['email']) > 96) || !preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $data['email'])) {
+        if ((utf8_strlen($this->request->post['customer']['email']) > 96) || !preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $this->request->post['customer']['email'])) {
             $this->error['email'] = $this->language->get('error_email');
         }
 /*
@@ -623,9 +577,10 @@ class ControllerTicketPurchase extends Controller {
   */      
 
 // robin xu 2015 05 12 判断卡号合法性
-		if(isset($data['promotion_code'])) {
+		$this->load->model('models/interface');
+		if(isset($this->request->post['customer']['promotion_code'])) {
 			$tmp_array = array();
-			$tmp_array['promotion_code'] = $data['promotion_code'];
+			$tmp_array['promotion_code'] = $this->request->post['customer']['promotion_code'];
 			$tmp_array['card_id'] = 1;
 			$tmp_array['event_id'] = 50;
             if ($this->model_models_interface->model_interface(0, 'card', 'BYIDAndNumber', 'check', $tmp_array)) {

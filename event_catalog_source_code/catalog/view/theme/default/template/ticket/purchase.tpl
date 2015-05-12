@@ -40,7 +40,7 @@
                     </td>
                     <td class="text-center col-xs-2">
                         <div>
-                            <input disabled type="number" name="<?php echo $row ?>[quantity]" class='form-control quantity-input tickets-input' min="0" value="0" step="1" >
+                            <input disabled type="number" name="<?php echo $row ?>[quantity]" class='form-control quantity-input tickets-input' min="0" value="<?php echo $tickets[$row]['quantity']; ?>" step="1" >
                             <input type="hidden" name="<?php echo $row ?>[name]" value="<?php echo $ticket['name'] ?>">
                             <input type="hidden" name="<?php echo $row ?>[price]" value="<?php echo $ticket['price'] ?>">
                             <input type="hidden" name="<?php echo $row ?>[subtotal]" value="0" class="subtotal-post">
