@@ -40,7 +40,7 @@
                     </td>
                     <td class="text-center col-xs-2">
                         <div>
-                            <input type="number" name="<?php echo $row ?>[quantity]" class='form-control quantity-input tickets-input' min="0" value="0" step="1" >
+                            <input disabled type="number" name="<?php echo $row ?>[quantity]" class='form-control quantity-input tickets-input' min="0" value="0" step="1" >
                             <input type="hidden" name="<?php echo $row ?>[name]" value="<?php echo $ticket['name'] ?>">
                             <input type="hidden" name="<?php echo $row ?>[price]" value="<?php echo $ticket['price'] ?>">
                             <input type="hidden" name="<?php echo $row ?>[subtotal]" value="0" class="subtotal-post">
@@ -177,7 +177,7 @@
                   <?php foreach($stores as $key=>$store) { ?>
                   <div class="radio">
                       <label for="pickup-store-<?php echo $store['ticket_office_id'] ?>">
-                          <input type="radio" name="customer[shipping_method]" id="pickup-store-<?php echo $store['ticket_office_id'] ?>" value="<?php echo $store['ticket_office_id'] ?>" >
+                          <input type="radio" name="customer[shipping_detail]" id="pickup-store-<?php echo $store['ticket_office_id'] ?>" value="<?php echo $store['ticket_office_id'] ?>" >
                           <?php echo $store['name'], $store['phone'], $store['address'] ?>
                       </label>
                   </div>
@@ -211,6 +211,9 @@
                   <label for="payment-online">
                       <input type="radio" name="customer[payment_method]" id="payment-online" value="online" checked>
                       <?php echo $text_online_banking; ?>
+
+                      <?php echo $text_bank_account; ?>
+
                   </label>
               </div>
               <div class="radio">

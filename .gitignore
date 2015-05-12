@@ -1,7 +1,7 @@
 .idea
 *.swp
 *.swo
-
+phpmyadmin
 event_catalog_source_code/config.php
 event_catalog_source_code/log/*
 !/event_catalog_source_code/log/index.html

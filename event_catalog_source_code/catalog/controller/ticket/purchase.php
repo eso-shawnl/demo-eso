@@ -18,23 +18,23 @@ class ControllerTicketPurchase extends Controller {
 			'text' => $this->language->get('heading_title')
 		);
 
-			$data['heading_title'] = $this->language->get('heading_title');
+		$data['heading_title'] = $this->language->get('heading_title');
 
-			$data['text_next'] = $this->language->get('text_next');
-			$data['text_next_choice'] = $this->language->get('text_next_choice');
-			$data['column_name'] = $this->language->get('column_name');
-			$data['column_model'] = $this->language->get('column_model');
+		$data['text_next'] = $this->language->get('text_next');
+		$data['text_next_choice'] = $this->language->get('text_next_choice');
+		$data['column_name'] = $this->language->get('column_name');
+		$data['column_model'] = $this->language->get('column_model');
         $data['column_zone']=$this->language->get('column_zone');
-			$data['column_quantity'] = $this->language->get('column_quantity');
-			$data['column_price'] = $this->language->get('column_price');
+		$data['column_quantity'] = $this->language->get('column_quantity');
+		$data['column_price'] = $this->language->get('column_price');
         $data['column_subtotal'] = $this->language->get('column_subtotal');
-			$data['column_total'] = $this->language->get('column_total');
-			$data['button_update'] = $this->language->get('button_update');
-			$data['button_remove'] = $this->language->get('button_remove');
-			$data['button_shopping'] = $this->language->get('button_shopping');
-			$data['button_checkout'] = $this->language->get('button_checkout');
-			$data['action'] = $this->url->link('ticket/purchase/checkout');
-			$data['tickets'] = array();
+		$data['column_total'] = $this->language->get('column_total');
+		$data['button_update'] = $this->language->get('button_update');
+		$data['button_remove'] = $this->language->get('button_remove');
+		$data['button_shopping'] = $this->language->get('button_shopping');
+		$data['button_checkout'] = $this->language->get('button_checkout');
+		$data['action'] = $this->url->link('ticket/purchase/checkout');
+		$data['tickets'] = array();
 
         $data['text_account_already'] = sprintf($this->language->get('text_account_already'), $this->url->link('account/login', '', 'SSL'));
         $data['text_your_details'] = $this->language->get('text_your_details');
@@ -127,6 +127,8 @@ class ControllerTicketPurchase extends Controller {
         $data['text_payment_method'] = $this->language->get('text_payment_method');
         $data['text_online_banking'] = $this->language->get('text_online_banking');
         $data['text_onsite'] = $this->language->get('text_onsite');
+
+        $data['text_bank_account'] = $this->config->get('bank_account') ;
 
 
         if (isset($this->request->post['customer_group_id'])) {
@@ -367,6 +369,9 @@ class ControllerTicketPurchase extends Controller {
         $delivery_type=$this->model_models_interface->model_interface(0,'configuration','by_code','get','delivery_type');
         $pickup_stores=$this->model_models_interface->model_interface(0,'ticket','office_by_event_id','get',50);
 
+        $bank_account=$this->model_models_interface->model_interface(0,'configuration','by_code','get','bank_account');
+
+
         foreach ($ticket_db as $key => $value) {
             if (is_array($value) && !empty($value)) {
                 if ($key == 'ticket_price_list') {
@@ -388,13 +393,15 @@ class ControllerTicketPurchase extends Controller {
         $data['delivery_type']=$delivery_type;
         $data['stores']=$pickup_stores;
 
-			$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+        $data['bank_account']=$bank_account;
+
+		$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 
 			//$this->load->model('extension/extension');
 
-			$data['checkout_buttons'] = array();
+		      $data['checkout_buttons'] = array();
 
-			$data['column_left'] = $this->load->controller('common/column_left');
+		      $data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
@@ -411,11 +418,11 @@ class ControllerTicketPurchase extends Controller {
     public function checkout(){
         //To do - get purchase data from view
         $purchase_array=array();
-        $data=$this->request->post;
+        //$data=$this->request->post;
         //var_dump($data);
         //validate user information from form
-        //if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate($data['customer'])){
-            foreach($data as $k => $v) {
+        if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate($this->request->post['customer'])){
+            foreach($this->request->post as $k => $v) {
                 if (isset($v) && !empty($v)) {
                     if ($k != 'total' && $k != 'customer') {
                         if ($v['subtotal'] != '0.00') {
@@ -428,64 +435,64 @@ class ControllerTicketPurchase extends Controller {
             $this->submit($data['customer'],$purchase_array,$total);
             
             $this->response->redirect($this->url->link('ticket/success'));
-        //}
+        }
     }
     public function submit($customer_info,$purchase_array,$total)
     {
         $this->load->model('models/interface');
         $this->load->model('account/customer');
 
-            $data['order_id'] = 0;
-            $data['event_id'] = 50; //for live - event id comes from url, otherwise set to 0
-            $data['order_type_id'] = 1;
+        $data['order_id'] = 0;
+        $data['event_id'] = 50; //for live - event id comes from url, otherwise set to 0
+        $data['order_type_id'] = 1;
             //$data['invoice_no']
             //$data['invoice_prefix']
             //$data['store_id']
             //$data['store_name']
             //$data['store_url']
             //$data['customer_id']=$this->customer->getId();
-            $data['customer_id'] = 1; // for testing
+        $data['customer_id'] = 1; // for testing
             //$data['customer_group_id']
             //$data['filter_name']
-            $data['firstname'] = $customer_info['firstname'];
-            $data['lastname'] = $customer_info['lastname'];
-            $data['email'] = $customer_info['email'];
-            $data['telephone'] = $customer_info['phone'];
-            $data['fax'] = '';
-            $data['payment_firstname'] = '';
-            $data['payment_lastname'] = '';
-            $data['payment_company'] = '';
-            $data['payment_address_1'] = '';
-            $data['payment_address_2'] = '';
-            $data['payment_city'] = '';
-            $data['payment_postcode'] = '';
-            $data['payment_country'] = '';
-            $data['payment_country_id'] = 0;
-            //$data['payment_zone']
+        $data['firstname'] = $customer_info['firstname'];
+        $data['lastname'] = $customer_info['lastname'];
+        $data['email'] = $customer_info['email'];
+        $data['telephone'] = $customer_info['phone'];
+        $data['fax'] = '';
+        $data['payment_firstname'] = '';
+        $data['payment_lastname'] = '';
+        $data['payment_company'] = '';
+        $data['payment_address_1'] = '';
+        $data['payment_address_2'] = '';
+        $data['payment_city'] = '';
+        $data['payment_postcode'] = '';
+        $data['payment_country'] = '';
+        $data['payment_country_id'] = 0;
+        //$data['payment_zone']
             //$data['payment_zone_id']
             //$data['payment_address_format']
             //$data['payment_custom_field']
-            $data['payment_method'] = 1;//1 represents online banking, 2 represents EFPOS/cash
-            $data['delivery_type']=1;//1 represents post, 2 represents pickup
+        $data['payment_method'] = 1;//1 represents online banking, 2 represents EFPOS/cash
+        $data['delivery_type']=1;//1 represents post, 2 represents pickup
 
-            if($customer_info['shipping_method']==1){
-                $data['shipping_firstname'] = $customer_info['firstname'];
-                $data['shipping_lastname'] = $customer_info['lastname'];
-                $data['shipping_company'] = 'Beyond Media';
-                $data['shipping_address_1'] = $customer_info['street_number'].' '.$customer_info['route'];
-                $data['shipping_address_2'] = $customer_info['suburb'].' '.$customer_info['zone'];
-                $data['shipping_city'] = $customer_info['city'];
-                $data['shipping_postcode'] = $customer_info['postcode'];
-                $data['shipping_country'] = $customer_info['country'];
-            }
+        if($customer_info['shipping_method']==1){
+            $data['shipping_firstname'] = $customer_info['firstname'];
+            $data['shipping_lastname'] = $customer_info['lastname'];
+            $data['shipping_company'] = 'Beyond Media';
+            $data['shipping_address_1'] = $customer_info['street_number'].' '.$customer_info['route'];
+            $data['shipping_address_2'] = $customer_info['suburb'].' '.$customer_info['zone'];
+            $data['shipping_city'] = $customer_info['city'];
+            $data['shipping_postcode'] = $customer_info['postcode'];
+            $data['shipping_country'] = $customer_info['country'];
+        }
             //$data['shipping_country_id'];
             //$data['shipping_zone'];
             //$data['shipping_zone_id'];
             //$data['shipping_address_format'];
             //$data['shipping_custom_field'];
             //$data['shipping_code'];
-            $data['comment'] = 'Please call first before delivery';
-            $data['total'] =$total;
+        $data['comment'] = 'Please call first before delivery';
+        $data['total'] =$total;
             //$data['commission'];
             //$data['tracking'];
             //$data['language_id'];
@@ -496,14 +503,14 @@ class ControllerTicketPurchase extends Controller {
             //$data['forwarded_ip'];
             //$data['user_agent'];
             //$data['accept_language'];
-            $data['status'] = '1';
-            date_default_timezone_set("UTC");
-            $data['created_date'] = date("Y-m-d H:i:s", time());
-            $data['modified_date'] = date("Y-m-d H:i:s", time());
-            $order_array['operator_id'] = '1';
+        $data['status'] = '1';
+        date_default_timezone_set("UTC");
+        $data['created_date'] = date("Y-m-d H:i:s", time());
+        $data['modified_date'] = date("Y-m-d H:i:s", time());
+        $order_array['operator_id'] = '1';
 
             //call stored procedure to insert a new order
-            $result = $this->model_models_interface->model_interface(0, 'order', 'info', 'edit', $data);
+        $result = $this->model_models_interface->model_interface(0, 'order', 'info', 'edit', $data);
         $order_id='';
             foreach ($result as $v) {
                 if ($v['result'] == 1) {
@@ -557,7 +564,10 @@ class ControllerTicketPurchase extends Controller {
                 }
             }
         }
+
+
     public function validate($data) {
+   
         if(isset($data['firstname'])) {
             if ((utf8_strlen(trim($data['firstname'])) < 1) || (utf8_strlen($data['firstname'])) > 32) {
                 $this->error['firstname'] = $this->language->get('error_firstname');
@@ -573,27 +583,27 @@ class ControllerTicketPurchase extends Controller {
         if ((utf8_strlen($data['email']) > 96) || !preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $data['email'])) {
             $this->error['email'] = $this->language->get('error_email');
         }
-
+/*
         if(isset($data['telephone'])) {
-            if ((utf8_strlen($data['telephone']) < 3) || (utf8_strlen($data['telephone']) > 32)) {
+            if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
                 $this->error['telephone'] = $this->language->get('error_telephone');
             }
         }
 
-        if(isset($data['route'])) {
-            if ((utf8_strlen(trim($data['route'])) < 3) || (utf8_strlen(trim($data['route'])) > 128)) {
+        if(isset($this->request->post['route'])) {
+            if ((utf8_strlen(trim($this->request->post['route'])) < 3) || (utf8_strlen(trim($this->request->post['route'])) > 128)) {
                 $this->error['route'] = $this->language->get('error_route');
             }
         }
 
-        if(isset($data['city'])) {
-            if ((utf8_strlen(trim($data['city'])) < 2) || (utf8_strlen(trim($data['city'])) > 128)) {
+        if(isset($this->request->post['city'])) {
+            if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
                 $this->error['city'] = $this->language->get('error_city');
             }
         }
 
-        if(isset($data['country'])) {
-            if ($data['country'] == '') {
+        if(isset($this->request->post['country'])) {
+            if ($this->request->post['country'] == '') {
                 $this->error['country'] = $this->language->get('error_country');
             }
         }
@@ -609,6 +619,20 @@ class ControllerTicketPurchase extends Controller {
                 $this->error['zone'] = $this->language->get('error_zone');
             }
         }
+        
+  */      
+
+// robin xu 2015 05 12 判断卡号合法性
+		if(isset($data['promotion_code'])) {
+			$tmp_array = array();
+			$tmp_array['promotion_code'] = $data['promotion_code'];
+			$tmp_array['card_id'] = 1;
+			$tmp_array['event_id'] = 50;
+            if ($this->model_models_interface->model_interface(0, 'card', 'BYIDAndNumber', 'check', $tmp_array)) {
+                $this->error['promotion_code'] = $this->language->get('error_promotion_code');
+            }
+        }
+die;
 //        // Agree to terms
 //        if ($this->config->get('config_account_id')) {
 //            $this->load->model('catalog/information');
