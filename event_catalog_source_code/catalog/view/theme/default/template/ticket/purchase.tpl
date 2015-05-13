@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<?php var_dump($agegroup_1); ?>
+<?php var_dump($tickets); ?>
 <div class="container">
         <!--
   <ul class="breadcrumb">
@@ -138,7 +138,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-phone"><?php echo $entry_telephone; ?></label>
                 <div class="col-sm-6">
-                    <input type="phone" name="customer[phone]" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-phone" class="form-control" />
+                    <input type="phone" name="customer[phone]" value="<?php if(isset($phone)) {echo $phone;} ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-phone" class="form-control" />
                 </div>
                 <span class="col-sm-4"><?php echo $info_telephone; ?></span>
             </div>
