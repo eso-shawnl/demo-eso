@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<?php var_dump($agegroup_1); ?>
 <div class="container">
         <!--
   <ul class="breadcrumb">
@@ -31,9 +32,9 @@
                     <td class="text-center col-xs-4">
                         <div>
                             <select name="<?php echo $row ?>[zone]" class="form-control zone-input tickets-input" >
-                                <option selected="selected" value="0">Choose Zone</option>
+                                <option value="0">Choose Zone</option>
                                 <?php foreach ($ticket['zone'] as $k=>$v) { ?>
-                                <option value="<?php echo $k ?>" remain="<?php echo $v ?>"><?php echo $k ?></option>
+                                <option <?php if($k==1){echo '';} ?> value="<?php echo $k; ?>" remain="<?php echo $v; ?>"><?php echo $k; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -97,7 +98,7 @@
                             <option value="0" >Choose one</option>
                             <?php if (!empty($age_group['age_group'])) { ?>
                             <?php foreach ($age_group['age_group'] as $key => $value) { ?>
-                            <option value="<?php echo $key; ?>" >
+                            <option value="<?php echo $key; ?>" <?php if ($agegroup_1==$key) {echo 'selected';} ?>  >
                                 <?php echo $value; ?>
                             </option>
 

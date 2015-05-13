@@ -320,7 +320,7 @@ var_dump($this->request->post);
                                 			
                                 			}
                                 			if($k2 == 'zone'){
-                                			$ticket_list[$v['row_id']]['zone']=$v2;
+                                			$ticket_list[$v['row_id']]['zone1']=$v2;
                                 			
                                 			}
                                 		}
