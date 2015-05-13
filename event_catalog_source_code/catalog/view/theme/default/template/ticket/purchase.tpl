@@ -1,5 +1,6 @@
 <?php echo $header; ?>
-<?php var_dump($tickets); ?>
+<?php var_dump($tickets[2]['zone']); ?>
+<?php var_dump($tickets[2]['zone1']); ?>
 <div class="container">
         <!--
   <ul class="breadcrumb">
@@ -34,7 +35,7 @@
                             <select name="<?php echo $row ?>[zone]" class="form-control zone-input tickets-input" >
                                 <option value="0">Choose Zone</option>
                                 <?php foreach ($ticket['zone'] as $k=>$v) { ?>
-                                <option <?php if($k==1){echo '';} ?> value="<?php echo $k; ?>" remain="<?php echo $v; ?>"><?php echo $k; ?></option>
+                                <option <?php if($k==$ticket['zone1']){echo 'selected';} ?> value="<?php echo $k; ?>" remain="<?php echo $v; ?>"><?php echo $k; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
