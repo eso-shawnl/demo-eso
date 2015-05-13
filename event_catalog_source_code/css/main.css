@@ -143,4 +143,7 @@ img.slide-img {
   .ticket-purchase #ticket-form .table-total td, .ticket-purchase #ticket-form .table-total th, .ticket-purchase #order-summary .table-total td, .ticket-purchase #order-summary .table-total th {
     padding: 0.5em; }
 
+th, td {
+    font-size: 12px;
+}
 /*# sourceMappingURL=main.css.map */

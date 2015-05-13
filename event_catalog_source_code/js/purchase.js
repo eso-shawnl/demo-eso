@@ -16,12 +16,12 @@
 
     $zoneInputs.change(function(){
         var _row = $(this).closest('tr').attr('id');
-        if ($(this).val() !== '0') {
-            $('#'+_row).find('.quantity-input').attr('disabled',false);
-        } else {
-            $('#'+_row).find('.quantity-input').attr('disabled',true);
-            $('#'+_row).find('.quantity-input').val(0);
-        }
+//        if ($(this).val() !== '0') {
+//            $('#'+_row).find('.quantity-input').attr('disabled',false);
+//        } else {
+//            $('#'+_row).find('.quantity-input').attr('disabled',true);
+//            $('#'+_row).find('.quantity-input').val(0);
+//        }
         calcSubTotal(_row);
         calcTotal();
     });

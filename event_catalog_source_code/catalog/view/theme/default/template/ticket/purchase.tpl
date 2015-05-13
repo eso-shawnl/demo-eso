@@ -1,6 +1,4 @@
 <?php echo $header; ?>
-<?php var_dump($tickets[2]['zone']); ?>
-<?php var_dump($tickets[2]['zone1']); ?>
 <div class="container">
         <!--
   <ul class="breadcrumb">
@@ -35,14 +33,14 @@
                             <select name="<?php echo $row ?>[zone]" class="form-control zone-input tickets-input" >
                                 <option value="0">Choose Zone</option>
                                 <?php foreach ($ticket['zone'] as $k=>$v) { ?>
-                                <option <?php if($k==$ticket['zone1']){echo 'selected';} ?> value="<?php echo $k; ?>" remain="<?php echo $v; ?>"><?php echo $k; ?></option>
+                                <option <?php if(isset($ticket['zone1']) && $k==$ticket['zone1']){echo 'selected';} ?> value="<?php echo $k; ?>" remain="<?php echo $v; ?>"><?php echo $k; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
                     </td>
                     <td class="text-center col-xs-2">
                         <div>
-                            <input disabled type="number" name="<?php echo $row ?>[quantity]" class='form-control quantity-input tickets-input' min="0" value="<?php echo $tickets[$row]['quantity']; ?>" step="1" >
+                            <input type="number" name="<?php echo $row ?>[quantity]" class='form-control quantity-input tickets-input' min="0" value="<?php echo $tickets[$row]['quantity']; ?>" step="1" >
                             <input type="hidden" name="<?php echo $row ?>[name]" value="<?php echo $ticket['name'] ?>">
                             <input type="hidden" name="<?php echo $row ?>[price]" value="<?php echo $ticket['price'] ?>">
                             <input type="hidden" name="<?php echo $row ?>[subtotal]" value="0" class="subtotal-post">
@@ -185,7 +183,7 @@
                   </div>
                   <?php } ?>
               </div>
-              <div id="shipping-detail-mail" class="col-sm-12">
+              <div id="shipping-detail-mail" class="col-sm-12" style="display:none">
                   <!-- Start Address Fields -->
                   <fieldset>
                       <legend><?php echo $text_your_address; ?></legend>

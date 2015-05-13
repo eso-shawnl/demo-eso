@@ -15,7 +15,7 @@ class Card extends Model {
         $card_id                = $data['card_id'];
         $promotion_code         = $data['promotion_code'];
 
-        return $this->db->query("CALL checkCardBYIDAndNumber($event_id,$card_id,$promotion_code,@result)");
+        return $this->db->query("CALL checkCardBYIDAndNumber($event_id,$card_id,'$promotion_code',@result)");
     }
 
 }
